@@ -5,3 +5,9 @@ body {
   font: 140% $font-stack;
   color: $primary-color;
 }
+.product__rewievs-stars-item object {
+  height: 12.32px;
+}
+.product__rewievs-stars {
+  display: flex;
+}
