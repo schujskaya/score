@@ -5,19 +5,19 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<title>Project Score</title>	
+	<title>Project Score</title>
 	<link rel="stylesheet" type="text/css" href="dist/css/styles.css" />
 </head>
 
 <body>
-	<header>
-		<div class="header-top">
-			<div class="header-top__contacts">Available 24/7 at (405) 555-0128</div>
-			<nav class="header-top__nav">
-				<div class="header-top__nav-item">Delivery & returns</div>
-				<div class="header-top__nav-item">Track order</div>
-				<div class="header-top__nav-item">Blog</div>
-				<div class="header-top__nav-item">Contacts</div>
+	<div class="topbar">
+		<div class="container">
+			<div class="topbar__contacts">Available 24/7 at (405) 555-0128</div>
+			<nav class="topbar__nav">
+				<div class="topbar__nav-item">Delivery & returns</div>
+				<div class="topbar__nav-item">Track order</div>
+				<div class="topbar__nav-item">Blog</div>
+				<div class="topbar__nav-item">Contacts</div>
 			</nav>
 			<form class="language">
 				<label>
@@ -37,7 +37,9 @@
 				<span>Log in / Register</span>
 			</div>
 		</div>
-		<div class="header">
+	</div>
+	<header class="header">
+		<div class="container">
 			<div class="logo">
 				<object type="image/svg+xml" data="/src/images/logo.svg" width="130" height="22">
 					<img src="/src/images/logo.png" width="130" height="22" alt="image format png" />
@@ -51,7 +53,7 @@
 				<div class="menu__item">Sale</div>
 			</nav>
 			<form class="search-form">
-				<input class="search-form__input">
+				<input class="search-form__input" placeholder="Search for products...">
 				<button class="search-form__button">
 					<object type="image/svg+xml" data="/src/icons/search.svg" width="16" height="16">
 						<img src="/src/icons/search.png" width="16" height="16" alt="image format png" />
@@ -87,15 +89,19 @@
 	</section>
 	<section class="main-slider">
 		<div class="main-slider__item">
-			<div class="main-slider__title">New collection <span>Menswear 2020</span></div>
-			<div class="main-slider__buttons">
-				<a href="#" class="button">
-					<span class="button__body">Shop sale</span>
-				</a>
-				<a href="#" class="button">
-					<span class="button__body">Shop the menswear
-					</span>
-				</a>
+			<div class="container">
+				<div class="main-slider__subtitle">New collection </div>
+				<div class="main-slider__title">Menswear 2020</div>
+				<div class="main-slider__buttons">
+					<button name="button" class="button button--type-border">Shop sale</button>
+					<button name="button" class="button button--type-color">Shop the menswear</button>
+				</div>
+				<div class="main-slider__nav">
+					<div class="main-slider__nav-item active">01</div>
+					<div class="main-slider__nav-item">02</div>
+					<div class="main-slider__nav-item">03</div>
+					<div class="main-slider__nav-item">04</div>
+				</div>
 			</div>
 		</div>
 		<div class="main-slider__prev">
@@ -107,12 +113,6 @@
 			<object type="image/svg+xml" data="/src/icons/arrow-right.svg" width="24" height="24">
 				<img src="/src/icons/arrow-right.png" width="24" height="24" alt="image format png" />
 			</object>
-		</div>
-		<div class="main-slider__nav">
-			<div class="main-slider__nav-item">01</div>
-			<div class="main-slider__nav-item">02</div>
-			<div class="main-slider__nav-item">03</div>
-			<div class="main-slider__nav-item">04</div>
 		</div>
 	</section>
 	<section class="categories">
@@ -140,150 +140,150 @@
 		<div class="carousel__subtitle">Check out our latest arrivals for the upcoming season <span
 				class="carousel__subtitle-link">See the collection here</span></div>
 		<div class="carousel__list">
-			<div class="carousel__item product">
-				<figure class="product__figure">
+			<article class="carousel__item product">
+				<div class="product__image">
 					<img src="/src/images/product1.jpg" alt="Dummy Image" class="card__image">
-				</figure>
+					<div class="product__favorites">
+						<object type="image/svg+xml" data="/src/icons/heart.svg" width="16" height="16">
+							<img src="/src/icons/heart.png" width="16" height="16" alt="image format png" />
+						</object>
+					</div>
+					<div class="product__rewievs-stars">
+						<div class="product__rewievs-stars-item">
+							<object type="image/svg+xml" data="/src/icons/star-color.svg" width="14" height="14">
+								<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
+							</object>
+						</div>
+						<div class="product__rewievs-stars-item"><object type="image/svg+xml"
+								data="/src/icons/star-color.svg" width="14" height="14">
+								<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
+							</object></div>
+						<div class="product__rewievs-stars-item"><object type="image/svg+xml"
+								data="/src/icons/star-color.svg" width="14" height="14">
+								<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
+							</object></div>
+						<div class="product__rewievs-stars-item"><object type="image/svg+xml"
+								data="/src/icons/star-color.svg" width="14" height="14">
+								<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
+							</object></div>
+						<div class="product__rewievs-stars-item"><object type="image/svg+xml"
+								data="/src/icons/star-color.svg" width="14" height="14">
+								<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
+							</object></div>
+					</div>
+				</div>
 				<div class="product__title">Black and white sport cap</div>
 				<div class="product__price">$18.15</div>
-				<div class="product__favorites">
-					<object type="image/svg+xml" data="/src/icons/heart.svg" width="16" height="16">
-						<img src="/src/icons/heart.png" width="16" height="16" alt="image format png" />
-					</object>
-				</div>
-				<div class="product__rewievs-stars">
-					<div class="product__rewievs-stars-item">
-						<object type="image/svg+xml" data="/src/icons/star-color.svg" width="14" height="14">
-							<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
+			</article>
+			<article class="carousel__item product">
+				<div class="product__image">
+					<img src="/src/images/product2.jpg" alt="Dummy Image" class="card__image">
+					<div class="product__favorites">
+						<object type="image/svg+xml" data="/src/icons/heart.svg" width="16" height="16">
+							<img src="/src/icons/heart.png" width="16" height="16" alt="image format png" />
 						</object>
 					</div>
-					<div class="product__rewievs-stars-item"><object type="image/svg+xml"
-							data="/src/icons/star-color.svg" width="14" height="14">
-							<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
-						</object></div>
-					<div class="product__rewievs-stars-item"><object type="image/svg+xml"
-							data="/src/icons/star-color.svg" width="14" height="14">
-							<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
-						</object></div>
-					<div class="product__rewievs-stars-item"><object type="image/svg+xml"
-							data="/src/icons/star-color.svg" width="14" height="14">
-							<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
-						</object></div>
-					<div class="product__rewievs-stars-item"><object type="image/svg+xml"
-							data="/src/icons/star-color.svg" width="14" height="14">
-							<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
-						</object></div>
 				</div>
-			</div>
-			<div class="carousel__item product">
-				<figure class="product__figure">
-					<img src="/src/images/product2.jpg" alt="Dummy Image" class="card__image">
-				</figure>
 				<div class="product__title">Metal bridge sunglasses</div>
 				<div class="product__price">$89.95</div>
-				<div class="product__favorites">
-					<object type="image/svg+xml" data="/src/icons/heart.svg" width="16" height="16">
-						<img src="/src/icons/heart.png" width="16" height="16" alt="image format png" />
-					</object>
-				</div>
-			</div>
-			<div class="carousel__item product">
-				<figure class="product__figure">
+			</article>
+			<article class="carousel__item product">
+				<div class="product__image">
 					<img src="/src/images/product3.jpg" alt="Dummy Image" class="card__image">
-				</figure>
+					<div class="product__favorites">
+						<object type="image/svg+xml" data="/src/icons/heart.svg" width="16" height="16">
+							<img src="/src/icons/heart.png" width="16" height="16" alt="image format png" />
+						</object>
+					</div>
+					<div class="product__rewievs-stars">
+						<div class="product__rewievs-stars-item">
+							<object type="image/svg+xml" data="/src/icons/star-color.svg" width="14" height="14">
+								<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
+							</object>
+						</div>
+						<div class="product__rewievs-stars-item"><object type="image/svg+xml"
+								data="/src/icons/star-color.svg" width="14" height="14">
+								<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
+							</object></div>
+						<div class="product__rewievs-stars-item"><object type="image/svg+xml"
+								data="/src/icons/star-color.svg" width="14" height="14">
+								<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
+							</object></div>
+						<div class="product__rewievs-stars-item"><object type="image/svg+xml"
+								data="/src/icons/star-color.svg" width="14" height="14">
+								<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
+							</object></div>
+						<div class="product__rewievs-stars-item"><object type="image/svg+xml" data="/src/icons/star.svg"
+								width="14" height="14">
+								<img src="/src/icons/star.png" width="14" height="14" alt="image format png" />
+							</object></div>
+					</div>
+				</div>
 				<div class="product__title">Green baby romper</div>
 				<div class="product__price">$20.40</div>
-				<div class="product__favorites">
-					<object type="image/svg+xml" data="/src/icons/heart.svg" width="16" height="16">
-						<img src="/src/icons/heart.png" width="16" height="16" alt="image format png" />
-					</object>
-				</div>
-				<div class="product__rewievs-stars">
-					<div class="product__rewievs-stars-item">
-						<object type="image/svg+xml" data="/src/icons/star-color.svg" width="14" height="14">
-							<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
+			</article>
+			<article class="carousel__item product">
+				<div class="product__image">
+					<img src="/src/images/product4.jpg" alt="Dummy Image" class="card__image">
+					<div class="product__favorites">
+						<object type="image/svg+xml" data="/src/icons/heart.svg" width="16" height="16">
+							<img src="/src/icons/heart.png" width="16" height="16" alt="image format png" />
 						</object>
 					</div>
-					<div class="product__rewievs-stars-item"><object type="image/svg+xml"
-							data="/src/icons/star-color.svg" width="14" height="14">
-							<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
-						</object></div>
-					<div class="product__rewievs-stars-item"><object type="image/svg+xml"
-							data="/src/icons/star-color.svg" width="14" height="14">
-							<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
-						</object></div>
-					<div class="product__rewievs-stars-item"><object type="image/svg+xml"
-							data="/src/icons/star-color.svg" width="14" height="14">
-							<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
-						</object></div>
-					<div class="product__rewievs-stars-item"><object type="image/svg+xml" data="/src/icons/star.svg"
-							width="14" height="14">
-							<img src="/src/icons/star.png" width="14" height="14" alt="image format png" />
-						</object></div>
 				</div>
-			</div>
-			<div class="carousel__item product">
-				<figure class="product__figure">
-					<img src="/src/images/product4.jpg" alt="Dummy Image" class="card__image">
-				</figure>
 				<div class="product__title">Mid-rise slim cropped fit jeans</div>
 				<div class="product__price">$40.00</div>
-				<div class="product__favorites">
-					<object type="image/svg+xml" data="/src/icons/heart.svg" width="16" height="16">
-						<img src="/src/icons/heart.png" width="16" height="16" alt="image format png" />
-					</object>
-				</div>
-			</div>
-			<div class="carousel__item product">
-				<figure class="product__figure">
+			</article>
+			<article class="carousel__item product">
+				<div class="product__image">
 					<img src="/src/images/product5.jpg" alt="Dummy Image" class="card__image">
-				</figure>
-				<div class="product__title">Red dangle earrings</div>
-				<div class="product__price">$29.95</div>
-				<div class="product__favorites">
-					<object type="image/svg+xml" data="/src/icons/heart.svg" width="16" height="16">
-						<img src="/src/icons/heart.png" width="16" height="16" alt="image format png" />
-					</object>
-				</div>
-				<div class="product__rewievs-stars">
-					<div class="product__rewievs-stars-item">
-						<object type="image/svg+xml" data="/src/icons/star-color.svg" width="14" height="14">
-							<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
+					<div class="product__favorites">
+						<object type="image/svg+xml" data="/src/icons/heart.svg" width="16" height="16">
+							<img src="/src/icons/heart.png" width="16" height="16" alt="image format png" />
 						</object>
 					</div>
-					<div class="product__rewievs-stars-item"><object type="image/svg+xml"
-							data="/src/icons/star-color.svg" width="14" height="14">
-							<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
-						</object></div>
-					<div class="product__rewievs-stars-item"><object type="image/svg+xml"
-							data="/src/icons/star-color.svg" width="14" height="14">
-							<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
-						</object></div>
-					<div class="product__rewievs-stars-item"><object type="image/svg+xml"
-							data="/src/icons/star-color.svg" width="14" height="14">
-							<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
-						</object></div>
-					<div class="product__rewievs-stars-item"><object type="image/svg+xml"
-							data="/src/icons/star-color.svg" width="14" height="14">
-							<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
-						</object></div>
+					<div class="product__rewievs-stars">
+						<div class="product__rewievs-stars-item">
+							<object type="image/svg+xml" data="/src/icons/star-color.svg" width="14" height="14">
+								<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
+							</object>
+						</div>
+						<div class="product__rewievs-stars-item"><object type="image/svg+xml"
+								data="/src/icons/star-color.svg" width="14" height="14">
+								<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
+							</object></div>
+						<div class="product__rewievs-stars-item"><object type="image/svg+xml"
+								data="/src/icons/star-color.svg" width="14" height="14">
+								<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
+							</object></div>
+						<div class="product__rewievs-stars-item"><object type="image/svg+xml"
+								data="/src/icons/star-color.svg" width="14" height="14">
+								<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
+							</object></div>
+						<div class="product__rewievs-stars-item"><object type="image/svg+xml"
+								data="/src/icons/star-color.svg" width="14" height="14">
+								<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
+							</object></div>
+					</div>
 				</div>
-			</div>
-			<div class="carousel__item product">
-				<figure class="product__figure">
+				<div class="product__title">Red dangle earrings</div>
+				<div class="product__price">$29.95</div>
+			</article>
+			<article class="carousel__item product">
+				<div class="product__image">
 					<img src="/src/images/product6.jpg" alt="Dummy Image" class="card__image">
-				</figure>
+					<div class="product__favorites">
+						<object type="image/svg+xml" data="/src/icons/heart.svg" width="16" height="16">
+							<img src="/src/icons/heart.png" width="16" height="16" alt="image format png" />
+						</object>
+					</div>
+				</div>
 				<div class="product__title">Baby shoes with laces</div>
 				<div class="product__price">$30.60</div>
-				<div class="product__favorites">
-					<object type="image/svg+xml" data="/src/icons/heart.svg" width="16" height="16">
-						<img src="/src/icons/heart.png" width="16" height="16" alt="image format png" />
-					</object>
-				</div>
-			</div>
+			</article>
 		</div>
 		<div class="carousel__nav">
-			<div class="carousel__nav-item"></div>
+			<div class="carousel__nav-item active"></div>
 			<div class="carousel__nav-item"></div>
 			<div class="carousel__nav-item"></div>
 			<div class="carousel__nav-item"></div>
@@ -292,33 +292,29 @@
 		</div>
 	</section>
 	<section class="main-grid">
-		<div class="main-grid__item main-grid__item--width-40">
+		<div class="main-grid__item main-grid__item1 main-grid__item--width-40">
 			<div class="main-grid__subtitle">Summer Collections</div>
 			<div class="main-grid__title">Sale Up to 70%</div>
-			<a href="#" class="main-grid__button">
-				<span class="button__body">Explore new prices</span>
-			</a>
+			<button name="button" class="button button--type-border">Explore new prices</button>
 		</div>
-		<div class="main-grid__item main-grid__item--width-60">
+		<div class="main-grid__item main-grid__item2 main-grid__item--width-60">
 			<div class="main-grid__subtitle">Deal of the week</div>
-			<div class="main-grid__title">Stay Warm With Our New Sweaters</div>
-			<a href="#" class="main-grid__button">
-				<span class="button__body">Shop now</span>
-			</a>
+			<div class="main-grid__title">Stay Warm With Our<br /> New Sweaters</div>
+			<button name="button" class="button button--type-border">Shop now</button>
 		</div>
-		<div class="main-grid__item main-grid__item--width-60">
+		<div class="main-grid__item main-grid__item3 main-grid__item--width-60">
 			<div class="main-grid__subtitle">New collection</div>
-			<div class="main-grid__title">Shoes & Bags autumn / winter 2020 </div>
-			<a href="#" class="main-grid__button">
+			<div class="main-grid__title">Shoes & Bags<br /> autumn / winter 2020 </div>
+			<button name="button" class="button button--type-border">
 				<span class="button__body">See offers</span>
 				<span class="button__append">
 					<object type="image/svg+xml" data="/src/icons/arrow-right.svg" width="16" height="16">
 						<img src="/src/icons/arrow-right.png" width="16" height="16" alt="image format png" />
 					</object>
 				</span>
-			</a>
+			</button>
 		</div>
-		<div class="main-grid__item main-grid__item--width-40">
+		<div class="main-grid__item main-grid__item4 main-grid__item--width-40">
 			<div class="main-grid__subtitle">For All new Email Subscribers</div>
 			<div class="main-grid__title">Get 5% Off & Free Delivery</div>
 			<form class="subscribe-form">
@@ -331,250 +327,264 @@
 		</div>
 	</section>
 	<section class="populars">
+		<div class="populars__title">Popular categories</div>
 		<div class="populars__list">
 			<div class="populars__item">
-				<figure class="populars__item-image">
-					<img src="/src/images/populars1.jpg" alt="Dummy Image">
-				</figure>
+				<img src="/src/images/populars1.jpg" alt="" class="populars__item-image">
 				<div class="populars__item-title">Tops</div>
 			</div>
 			<div class="populars__item">
-				<figure class="populars__item-image">
-					<img src="/src/images/populars2.jpg" alt="Dummy Image">
-				</figure>
+				<img src="/src/images/populars2.jpg" alt="" class="populars__item-image">
 				<div class="populars__item-title">T-shirts</div>
 			</div>
 			<div class="populars__item">
-				<figure class="populars__item-image">
-					<img src="/src/images/populars3.jpg" alt="Dummy Image">
-				</figure>
+				<img src="/src/images/populars3.jpg" alt="" class="populars__item-image">
 				<div class="populars__item-title">Caps</div>
 			</div>
 			<div class="populars__item">
-				<figure class="populars__item-image">
-					<img src="/src/images/populars4.jpg" alt="Dummy Image">
-				</figure>
+				<img src="/src/images/populars4.jpg" alt="" class="populars__item-image">
 				<div class="populars__item-title">Sandals</div>
 			</div>
 			<div class="populars__item">
-				<figure class="populars__item-image">
-					<img src="/src/images/populars5.jpg" alt="Dummy Image">
-				</figure>
+				<img src="/src/images/populars5.jpg" alt="" class="populars__item-image">
 				<div class="populars__item-title">Jackets</div>
 			</div>
 			<div class="populars__item">
-				<figure class="populars__item-image">
-					<img src="/src/images/populars6.jpg" alt="Dummy Image">
-				</figure>
+				<img src="/src/images/populars6.jpg" alt="" class="populars__item-image">
 				<div class="populars__item-title">Coats</div>
 			</div>
 		</div>
 	</section>
 	<section class="trends">
-		<div class="trends__title">Trending now</div>
-		<div class="trends__list">
-			<div class="trends__item product">
-				<figure class="product__figure">
-					<img src="/src/images/trend1.jpg" alt="Dummy Image" class="card__image">
-				</figure>
-				<div class="product__title">Shirt with insertion lace trims</div>
-				<div class="product__price">$49.95</div>
-				<div class="product__favorites">
-					<object type="image/svg+xml" data="/src/icons/heart.svg" width="16" height="16">
-						<img src="/src/icons/heart.png" width="16" height="16" alt="image format png" />
-					</object>
-				</div>
-				<div class="product__rewievs-stars">
-					<div class="product__rewievs-stars-item">
-						<object type="image/svg+xml" data="/src/icons/star-color.svg" width="14" height="14">
-							<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
-						</object>
+		<div class="container">
+			<div class="trends__title">Trending now</div>
+			<div class="trends__list">
+				<article class="trends__item product">
+					<div class="product__image">
+						<img src="/src/images/trend1.jpg" alt="Dummy Image">
+						<div class="product__favorites">
+							<object type="image/svg+xml" data="/src/icons/heart.svg" width="16" height="16">
+								<img src="/src/icons/heart.png" width="16" height="16" alt="image format png" />
+							</object>
+						</div>
+						<div class="product__rewievs-stars">
+							<div class="product__rewievs-stars-item">
+								<object type="image/svg+xml" data="/src/icons/star-color.svg" width="14" height="14">
+									<img src="/src/icons/star-color.png" width="14" height="14"
+										alt="image format png" />
+								</object>
+							</div>
+							<div class="product__rewievs-stars-item"><object type="image/svg+xml"
+									data="/src/icons/star-color.svg" width="14" height="14">
+									<img src="/src/icons/star-color.png" width="14" height="14"
+										alt="image format png" />
+								</object></div>
+							<div class="product__rewievs-stars-item"><object type="image/svg+xml"
+									data="/src/icons/star-color.svg" width="14" height="14">
+									<img src="/src/icons/star-color.png" width="14" height="14"
+										alt="image format png" />
+								</object></div>
+							<div class="product__rewievs-stars-item"><object type="image/svg+xml"
+									data="/src/icons/star-color.svg" width="14" height="14">
+									<img src="/src/icons/star-color.png" width="14" height="14"
+										alt="image format png" />
+								</object></div>
+							<div class="product__rewievs-stars-item"><object type="image/svg+xml"
+									data="/src/icons/star-color.svg" width="14" height="14">
+									<img src="/src/icons/star-color.png" width="14" height="14"
+										alt="image format png" />
+								</object></div>
+						</div>
 					</div>
-					<div class="product__rewievs-stars-item"><object type="image/svg+xml"
-							data="/src/icons/star-color.svg" width="14" height="14">
-							<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
-						</object></div>
-					<div class="product__rewievs-stars-item"><object type="image/svg+xml"
-							data="/src/icons/star-color.svg" width="14" height="14">
-							<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
-						</object></div>
-					<div class="product__rewievs-stars-item"><object type="image/svg+xml"
-							data="/src/icons/star-color.svg" width="14" height="14">
-							<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
-						</object></div>
-					<div class="product__rewievs-stars-item"><object type="image/svg+xml"
-							data="/src/icons/star-color.svg" width="14" height="14">
-							<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
-						</object></div>
-				</div>
-			</div>
-			<div class="trends__item product">
-				<figure class="product__figure">
-					<img src="/src/images/trend2.jpg" alt="Dummy Image" class="card__image">
-				</figure>
-				<div class="product__title">Chrono watch with blue leather belt</div>
-				<div class="product__price">$120.60</div>
-				<div class="product__favorites">
-					<object type="image/svg+xml" data="/src/icons/heart.svg" width="16" height="16">
-						<img src="/src/icons/heart.png" width="16" height="16" alt="image format png" />
-					</object>
-				</div>
-				<div class="product__rewievs-stars">
-					<div class="product__rewievs-stars-item">
-						<object type="image/svg+xml" data="/src/icons/star-color.svg" width="14" height="14">
-							<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
-						</object>
+					<div class="product__title">Shirt with insertion lace trims</div>
+					<div class="product__price">$49.95</div>
+				</article>
+				<article class="trends__item product">
+					<div class="product__image">
+						<img src="/src/images/trend2.jpg" alt="Dummy Image">
+						<div class="product__favorites">
+							<object type="image/svg+xml" data="/src/icons/heart.svg" width="16" height="16">
+								<img src="/src/icons/heart.png" width="16" height="16" alt="image format png" />
+							</object>
+						</div>
+						<div class="product__rewievs-stars">
+							<div class="product__rewievs-stars-item">
+								<object type="image/svg+xml" data="/src/icons/star-color.svg" width="14" height="14">
+									<img src="/src/icons/star-color.png" width="14" height="14"
+										alt="image format png" />
+								</object>
+							</div>
+							<div class="product__rewievs-stars-item"><object type="image/svg+xml"
+									data="/src/icons/star-color.svg" width="14" height="14">
+									<img src="/src/icons/star-color.png" width="14" height="14"
+										alt="image format png" />
+								</object></div>
+							<div class="product__rewievs-stars-item"><object type="image/svg+xml"
+									data="/src/icons/star-color.svg" width="14" height="14">
+									<img src="/src/icons/star-color.png" width="14" height="14"
+										alt="image format png" />
+								</object></div>
+							<div class="product__rewievs-stars-item"><object type="image/svg+xml"
+									data="/src/icons/star-color.svg" width="14" height="14">
+									<img src="/src/icons/star-color.png" width="14" height="14"
+										alt="image format png" />
+								</object></div>
+							<div class="product__rewievs-stars-item"><object type="image/svg+xml"
+									data="/src/icons/star.svg" width="14" height="14">
+									<img src="/src/icons/star.png" width="14" height="14" alt="image format png" />
+								</object></div>
+						</div>
 					</div>
-					<div class="product__rewievs-stars-item"><object type="image/svg+xml"
-							data="/src/icons/star-color.svg" width="14" height="14">
-							<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
-						</object></div>
-					<div class="product__rewievs-stars-item"><object type="image/svg+xml"
-							data="/src/icons/star-color.svg" width="14" height="14">
-							<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
-						</object></div>
-					<div class="product__rewievs-stars-item"><object type="image/svg+xml"
-							data="/src/icons/star-color.svg" width="14" height="14">
-							<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
-						</object></div>
-					<div class="product__rewievs-stars-item"><object type="image/svg+xml" data="/src/icons/star.svg"
-							width="14" height="14">
-							<img src="/src/icons/star.png" width="14" height="14" alt="image format png" />
-						</object></div>
-				</div>
+					<div class="product__title">Chrono watch with blue leather belt</div>
+					<div class="product__price">$120.60</div>
+				</article>
+				<article class="trends__item product">
+					<div class="product__image">
+						<img src="/src/images/trend3.jpg" alt="Dummy Image">
+						<div class="product__favorites">
+							<object type="image/svg+xml" data="/src/icons/heart.svg" width="16" height="16">
+								<img src="/src/icons/heart.png" width="16" height="16" alt="image format png" />
+							</object>
+						</div>
+					</div>
+					<div class="product__title">Check coat with colour contrast</div>
+					<div class="product__price">$183.45</div>
+				</article>
 			</div>
-			<div class="trends__item product">
-				<figure class="product__figure">
-					<img src="/src/images/trend3.jpg" alt="Dummy Image" class="card__image">
-				</figure>
-				<div class="product__title">Check coat with colour contrast</div>
-				<div class="product__price">$183.45</div>
-				<div class="product__favorites">
-					<object type="image/svg+xml" data="/src/icons/heart.svg" width="16" height="16">
-						<img src="/src/icons/heart.png" width="16" height="16" alt="image format png" />
-					</object>
-				</div>
+			<div class="trends__prev">
+				<object type="image/svg+xml" data="/src/icons/arrow-left.svg" width="24" height="24">
+					<img src="/src/icons/arrow-left.png" width="24" height="24" alt="image format png" />
+				</object>
 			</div>
+			<div class="trends__next">
+				<object type="image/svg+xml" data="/src/icons/arrow-right.svg" width="24" height="24">
+					<img src="/src/icons/arrow-right.png" width="24" height="24" alt="image format png" />
+				</object>
+			</div>
+			<button name="button" class="button button--type-border">Explore top sales</button>
 		</div>
-		<div class="trends__prev">
-			<object type="image/svg+xml" data="/src/icons/arrow-left.svg" width="24" height="24">
-				<img src="/src/icons/arrow-left.png" width="24" height="24" alt="image format png" />
-			</object>
-		</div>
-		<div class="trends__next">
-			<object type="image/svg+xml" data="/src/icons/arrow-right.svg" width="24" height="24">
-				<img src="/src/icons/arrow-right.png" width="24" height="24" alt="image format png" />
-			</object>
-		</div>
-		<a href="#" class="trends__button">
-			<span class="button__body">Explore top sales</span>
-		</a>
 	</section>
 	<section class="sale">
-		<div class="sale__title">Sale up to 70%</div>
-		<div class="sale__list">
-			<div class="sale__item product">
-				<figure class="product__figure">
-					<img src="/src/images/sale1.jpg" alt="Dummy Image" class="card__image">
-				</figure>
-				<div class="product__title">Leather crossbody bag with gold hardware</div>
-				<div class="product__price pricr--type_sale">$89.50</div>
-				<div class="product__price pricr--type_crossed-out">$179.00</div>
-				<div class="product__label label--type_sale">-50%</div>
-				<div class="product__favorites">
-					<object type="image/svg+xml" data="/src/icons/heart.svg" width="16" height="16">
-						<img src="/src/icons/heart.png" width="16" height="16" alt="image format png" />
-					</object>
-				</div>
-				<div class="product__rewievs-stars">
-					<div class="product__rewievs-stars-item">
-						<object type="image/svg+xml" data="/src/icons/star-color.svg" width="14" height="14">
-							<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
-						</object>
+		<div class="container">
+			<div class="sale__title">Sale up to 70%</div>
+			<div class="sale__list">
+				<article class="sale__item product">
+					<div class="product__image">
+						<img src="/src/images/sale1.jpg" alt="Dummy Image" class="card__image">
+						<div class="product__favorites">
+							<object type="image/svg+xml" data="/src/icons/heart.svg" width="16" height="16">
+								<img src="/src/icons/heart.png" width="16" height="16" alt="image format png" />
+							</object>
+						</div>
+						<div class="product__rewievs-stars">
+							<div class="product__rewievs-stars-item">
+								<object type="image/svg+xml" data="/src/icons/star-color.svg" width="14" height="14">
+									<img src="/src/icons/star-color.png" width="14" height="14"
+										alt="image format png" />
+								</object>
+							</div>
+							<div class="product__rewievs-stars-item"><object type="image/svg+xml"
+									data="/src/icons/star-color.svg" width="14" height="14">
+									<img src="/src/icons/star-color.png" width="14" height="14"
+										alt="image format png" />
+								</object></div>
+							<div class="product__rewievs-stars-item"><object type="image/svg+xml"
+									data="/src/icons/star-color.svg" width="14" height="14">
+									<img src="/src/icons/star-color.png" width="14" height="14"
+										alt="image format png" />
+								</object></div>
+							<div class="product__rewievs-stars-item"><object type="image/svg+xml"
+									data="/src/icons/star-color.svg" width="14" height="14">
+									<img src="/src/icons/star-color.png" width="14" height="14"
+										alt="image format png" />
+								</object></div>
+							<div class="product__rewievs-stars-item"><object type="image/svg+xml"
+									data="/src/icons/star-color.svg" width="14" height="14">
+									<img src="/src/icons/star-color.png" width="14" height="14"
+										alt="image format png" />
+								</object></div>
+						</div>
+						<div class="product__label label--type_sale">-50%</div>
 					</div>
-					<div class="product__rewievs-stars-item"><object type="image/svg+xml"
-							data="/src/icons/star-color.svg" width="14" height="14">
-							<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
-						</object></div>
-					<div class="product__rewievs-stars-item"><object type="image/svg+xml"
-							data="/src/icons/star-color.svg" width="14" height="14">
-							<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
-						</object></div>
-					<div class="product__rewievs-stars-item"><object type="image/svg+xml"
-							data="/src/icons/star-color.svg" width="14" height="14">
-							<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
-						</object></div>
-					<div class="product__rewievs-stars-item"><object type="image/svg+xml"
-							data="/src/icons/star-color.svg" width="14" height="14">
-							<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
-						</object></div>
-				</div>
-			</div>
-			<div class="sale__item product">
-				<figure class="product__figure">
-					<img src="/src/images/sale2.jpg" alt="Dummy Image" class="card__image">
-				</figure>
-				<div class="product__title">Skinny push-up jeans</div>
-				<div class="product__price pricr--type_sale">$40.00</div>
-				<div class="product__price pricr--type_crossed-out">$80.00</div>
-				<div class="product__label label--type_sale">-50%</div>
-				<div class="product__favorites">
-					<object type="image/svg+xml" data="/src/icons/heart.svg" width="16" height="16">
-						<img src="/src/icons/heart.png" width="16" height="16" alt="image format png" />
-					</object>
-				</div>
-			</div>
-			<div class="sale__item product">
-				<figure class="product__figure">
-					<img src="/src/images/sale3.jpg" alt="Dummy Image" class="card__image">
-				</figure>
-				<div class="product__title">Wide heel suede ankle boots</div>
-				<div class="product__price price--type_sale">$119.16</div>
-				<div class="product__price price--type_crossed-out">$148.95</div>
-				<div class="product__label label--type_sale">-20%</div>
-				<div class="product__favorites">
-					<object type="image/svg+xml" data="/src/icons/heart.svg" width="16" height="16">
-						<img src="/src/icons/heart.png" width="16" height="16" alt="image format png" />
-					</object>
-				</div>
-				<div class="product__rewievs-stars">
-					<div class="product__rewievs-stars-item">
-						<object type="image/svg+xml" data="/src/icons/star-color.svg" width="14" height="14">
-							<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
-						</object>
+					<div class="product__title">Leather crossbody bag with gold hardware</div>
+					<div class="product__price">
+						<div class="price--type_sale">$89.50</div>
+						<div class="price--type_crossed-out">$179.00</div>
 					</div>
-					<div class="product__rewievs-stars-item"><object type="image/svg+xml"
-							data="/src/icons/star-color.svg" width="14" height="14">
-							<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
-						</object></div>
-					<div class="product__rewievs-stars-item"><object type="image/svg+xml"
-							data="/src/icons/star-color.svg" width="14" height="14">
-							<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
-						</object></div>
-					<div class="product__rewievs-stars-item"><object type="image/svg+xml"
-							data="/src/icons/star-color.svg" width="14" height="14">
-							<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
-						</object></div>
-					<div class="product__rewievs-stars-item"><object type="image/svg+xml"
-							data="/src/icons/star-color.svg" width="14" height="14">
-							<img src="/src/icons/star-color.png" width="14" height="14" alt="image format png" />
-						</object></div>
-				</div>
+				</article>
+				<article class="sale__item product">
+					<div class="product__image">
+						<img src="/src/images/sale2.jpg" alt="Dummy Image" class="card__image">
+						<div class="product__favorites">
+							<object type="image/svg+xml" data="/src/icons/heart.svg" width="16" height="16">
+								<img src="/src/icons/heart.png" width="16" height="16" alt="image format png" />
+							</object>
+						</div>
+						<div class="product__label label--type_sale">-50%</div>
+					</div>
+					<div class="product__title">Skinny push-up jeans</div>
+					<div class="product__price">
+						<div class="price--type_sale">$40.00</div>
+						<div class="price--type_crossed-out">$80.00</div>
+					</div>
+				</article>
+				<article class="sale__item product">
+					<div class="product__image">
+						<img src="/src/images/sale3.jpg" alt="Dummy Image" class="card__image">
+						<div class="product__favorites">
+							<object type="image/svg+xml" data="/src/icons/heart.svg" width="16" height="16">
+								<img src="/src/icons/heart.png" width="16" height="16" alt="image format png" />
+							</object>
+						</div>
+						<div class="product__rewievs-stars">
+							<div class="product__rewievs-stars-item">
+								<object type="image/svg+xml" data="/src/icons/star-color.svg" width="14" height="14">
+									<img src="/src/icons/star-color.png" width="14" height="14"
+										alt="image format png" />
+								</object>
+							</div>
+							<div class="product__rewievs-stars-item"><object type="image/svg+xml"
+									data="/src/icons/star-color.svg" width="14" height="14">
+									<img src="/src/icons/star-color.png" width="14" height="14"
+										alt="image format png" />
+								</object></div>
+							<div class="product__rewievs-stars-item"><object type="image/svg+xml"
+									data="/src/icons/star-color.svg" width="14" height="14">
+									<img src="/src/icons/star-color.png" width="14" height="14"
+										alt="image format png" />
+								</object></div>
+							<div class="product__rewievs-stars-item"><object type="image/svg+xml"
+									data="/src/icons/star-color.svg" width="14" height="14">
+									<img src="/src/icons/star-color.png" width="14" height="14"
+										alt="image format png" />
+								</object></div>
+							<div class="product__rewievs-stars-item"><object type="image/svg+xml"
+									data="/src/icons/star-color.svg" width="14" height="14">
+									<img src="/src/icons/star-color.png" width="14" height="14"
+										alt="image format png" />
+								</object></div>
+						</div>
+						<div class="product__label label--type_sale">-20%</div>
+					</div>
+					<div class="product__title">Wide heel suede ankle boots</div>
+					<div class="product__price">
+						<div class="price--type_sale">$119.16</div>
+						<div class="price--type_crossed-out">$148.95</div>
+					</div>
+				</article>
 			</div>
+			<div class="sale__prev">
+				<object type="image/svg+xml" data="/src/icons/arrow-left.svg" width="24" height="24">
+					<img src="/src/icons/arrow-left.png" width="24" height="24" alt="image format png" />
+				</object>
+			</div>
+			<div class="sale__next">
+				<object type="image/svg+xml" data="/src/icons/arrow-right.svg" width="24" height="24">
+					<img src="/src/icons/arrow-right.png" width="24" height="24" alt="image format png" />
+				</object>
+			</div>
+			<button name="button" class="button button--type-border">See all sale products</button>
 		</div>
-		<div class="sale__prev">
-			<object type="image/svg+xml" data="/src/icons/arrow-left.svg" width="24" height="24">
-				<img src="/src/icons/arrow-left.png" width="24" height="24" alt="image format png" />
-			</object>
-		</div>
-		<div class="sale__next">
-			<object type="image/svg+xml" data="/src/icons/arrow-right.svg" width="24" height="24">
-				<img src="/src/icons/arrow-right.png" width="24" height="24" alt="image format png" />
-			</object>
-		</div>
-		<a href="#" class="sale__button">
-			<span class="button__body">See all sale products</span>
-		</a>
 	</section>
 	<section class="applications">
 		<div class="applications__title">Enjoy mobile shopping with our Createx Store App!</div>
@@ -596,7 +606,7 @@
 		</div>
 	</section>
 	<section class="benefits">
-		<div class="benefits_list">
+		<div class="benefits__list">
 			<div class="benefits__item">
 				<object class="benefits__icon" type="image/svg+xml" data="/src/icons/ic-delivery.svg" width="48"
 					height="48">

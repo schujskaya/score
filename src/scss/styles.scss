@@ -1,13 +1,565 @@
 @import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap);
 
-$poppins: 'Poppins', sans-serif; 
-$primary-color: #424551;
+$poppins: "Poppins", sans-serif;
+
+$primary: #17696a;
+$gray-100: #d7dadd;
+$gray-200: #f4f5f6;
+$gray-300: #e5e8ed;
+$gray-500: #b3b7bc;
+$gray-600: #9a9ca5;
+$gray-700: #787a80;
+$gray-800: #424551;
+$gray-900: #1e212c;
+$white: #ffffff;
+$danger: #ff4242;
+$success: #03cea4;
+
+$opacity-15: 0.15;
+$opacity-30: 0.3;
+
+@mixin extrasmall-text {
+  font: {
+    size: 12px;
+  }
+  line-height: 150%;
+}
+
+@mixin extrasmall-bold-text {
+  font: {
+    size: 12px;
+    weight: 900;
+  }
+  line-height: 150%;
+}
+
+@mixin small-text {
+  font: {
+    size: 14px;
+  }
+  line-height: 150%;
+}
+
+@mixin small-text-uppercase {
+  font: {
+    size: 14px;
+    weight: bold;
+  }
+  line-height: 150%;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+@mixin medium-text {
+  font: {
+    size: 18px;
+  }
+  line-height: 150%;
+}
+
+@mixin medium-text-uppercase {
+  font: {
+    size: 18px;
+    weight: bold;
+  }
+  line-height: 150%;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+@mixin display-1 {
+  font: {
+    size: 72px;
+    weight: 900;
+  }
+  line-height: 130%;
+  letter-spacing: 1px;
+}
+
+@mixin display-title {
+  font-weight: 900;
+  font-size: 46px;
+  line-height: 130%;
+}
+
+@mixin button-text {
+  font: {
+    size: 16px;
+    weight: bold;
+  }
+  line-height: 50px;
+  letter-spacing: 0.5px;
+}
 
 body {
   font-family: $poppins;
-  color: $primary-color;
+  color: $gray-800;
+  margin: 0;
 }
 
-.product__rewievs-stars {
+.container {
+  max-width: 1230px;
+  margin: 0 auto;
+}
+
+.topbar {
+  @include small-text;
+  background-color: $gray-900;
+  color: $white;
+  padding: 11px 0 12px;
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__nav {
+    display: flex;
+  }
+}
+
+.header {
+  padding: 20px 0;
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.menu {
   display: flex;
+}
+
+.banner-string {
+  @include extrasmall-text;
+  background-color: $primary;
+  color: $white;
+  padding: 8px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.main-slider {
+  position: relative;
+  & .container {
+    position: relative;
+    padding: 140px 0 415px;
+  }
+  &__item {
+    background-image: url("/src/images/main-slider1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  &__title {
+    @include display-1;
+    margin-bottom: 60px;
+  }
+  &__subtitle {
+    @include medium-text-uppercase;
+    margin-bottom: 12px;
+  }
+  &__prev {
+    position: absolute;
+    left: 0;
+    top: calc(50% - 56px);
+    width: 48px;
+    height: 48px;
+    background: $white;
+    opacity: 0.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 32px;
+  }
+  &__next {
+    position: absolute;
+    right: 0;
+    top: calc(50% - 56px);
+    width: 48px;
+    height: 48px;
+    background: $white;
+    opacity: 0.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 32px;
+  }
+  &__nav {
+    position: absolute;
+    left: 0;
+    bottom: 180px;
+    display: flex;
+    &-item {
+      width: 178px;
+      border-bottom: 2px solid rgba($gray-800, $opacity-30);
+      font-weight: bold;
+      font-size: 28px;
+      line-height: 150%;
+      color: $gray-800;
+      margin: 12px 0px;
+      opacity: 0.6;
+      &.active {
+        border-bottom: 2px solid $gray-800;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: -60px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 150%;
+  color: $gray-800;
+}
+
+.carousel {
+  padding: 90px 30px;
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 96px;
+  }
+  &__title {
+    @include display-title;
+    color: $gray-900;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  &__subtitle {
+    font-size: 18px;
+    line-height: 150%;
+    text-align: center;
+    margin-bottom: 60px;
+    &-link {
+      display: block;
+      color: $primary;
+      text-decoration: underline;
+    }
+  }
+  &__nav {
+    display: flex;
+    justify-content: center;
+    &-item {
+      width: 30px;
+      border-bottom: 3px solid $gray-500;
+      & + & {
+        margin-left: 12px;
+      }
+      &.active {
+        border-bottom: 3px solid $gray-800;
+      }
+    }
+  }
+
+  & .product__price {
+    font-size: 20px;
+  }
+}
+
+.main-grid {
+  padding: 90px 30px;
+  display: flex;
+  flex-wrap: wrap;
+  &__subtitle {
+    @include small-text-uppercase;
+    margin: 60px 60px 12px;
+  }
+  &__title {
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 130%;
+    margin: 0 60px 40px;
+    color: $gray-900;
+  }
+  &__item {
+    height: 500px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  &__item--width-40 {
+    width: calc(40% - 8px);
+  }
+  &__item--width-60 {
+    width: calc(60% - 8px);
+  }
+  &__item1 {
+    background-image: url(/src/images/grid1.jpg);
+    margin: 0 8px 8px 0;
+  }
+  &__item2 {
+    background-image: url(/src/images/grid2.jpg);
+    margin: 0 0 8px 8px;
+  }
+  &__item3 {
+    background-image: url(/src/images/grid3.jpg);
+    margin: 8px 8px 8px 0;
+  }
+  &__item4 {
+    background-color: $gray-300;
+    background-image: url(/src/images/grid4.png);
+    background-position: bottom right;
+    background-size: auto;
+    margin: 8px 0 8px 8px;
+  }
+  & button {
+    background: transparent;
+    font-size: 14px;
+    line-height: 44px;
+    letter-spacing: 0.5px;
+    margin: 0 60px;
+  }
+  & .subscribe-form {
+    margin: 0 60px;
+    display: flex;
+    flex-wrap: wrap;
+    &__label {
+      display: block;
+      margin-bottom: 8px;
+      width: 100%;
+    }
+    &__input {
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+      line-height: 44px;
+      padding: 0 40px;
+      margin-bottom: 20px;
+    }
+    &__button {
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+      border: 1px solid #17696a;
+      color: #fff;
+      background: #17696a;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      line-height: 44px;
+      padding: 0 40px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.populars {
+  padding: 90px 0;
+  &__title {
+    @include display-title;
+    color: $gray-900;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  &__list {
+    display: flex;
+    justify-content: center;
+  }
+  &__item {
+    &-image {
+      margin-bottom: 24px;
+    }
+    &-title {
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 150%;
+      color: $gray-900;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    & + & {
+      margin-left: 12px;
+    }
+  }
+}
+
+.trends {
+  background-color: $gray-300;
+  text-align: center;
+  padding: 80px 0;
+  & .container {
+    position: relative;
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 96px;
+  }
+  &__title {
+    @include display-title;
+    color: $gray-900;
+    margin-bottom: 60px;
+    text-align: left;
+  }
+  &__prev {
+    position: absolute;
+    top: 60px;
+    right: 48px;
+  }
+  &__next {
+    position: absolute;
+    top: 60px;
+    right: 0;
+  }
+  & button {
+  }
+}
+
+.sale {
+  padding: 80px 0;
+  text-align: center;
+  & .container {
+    position: relative;
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 96px;
+  }
+  &__title {
+    @include display-title;
+    color: $gray-900;
+    margin-bottom: 60px;
+    text-align: left;
+  }
+  &__prev {
+    position: absolute;
+    top: 60px;
+    right: 48px;
+  }
+  &__next {
+    position: absolute;
+    top: 60px;
+    right: 0;
+  }
+  & button {
+  }
+}
+
+.applications {
+  background-color: $gray-900;
+}
+
+.benefits {
+  &__list {
+    display: flex;
+  }
+}
+
+.brands {
+  &__list {
+    display: flex;
+  }
+}
+footer {
+  @include small-text;
+  background-color: $gray-900;
+  color: $white;
+}
+
+.footer-top {
+  display: flex;
+}
+
+.footer-bottom {
+  display: flex;
+  border-top: 1px solid rgba($white, $opacity-15);
+}
+
+img {
+  max-width: 100%;
+}
+.product {
+  text-align: left;
+  &__image {
+    position: relative;
+    margin-bottom: 16px;
+  }
+  &__rewievs-stars {
+    display: flex;
+    position: absolute;
+    top: 10px;
+    right: 16px;
+  }
+  &__favorites {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    background: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  &__label {
+    position: absolute;
+    top: 10px;
+    left: 16px;
+    background: $danger;
+    border-radius: 4px;
+    width: 54px;
+    height: 28px;
+    color: $white;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 160%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__title {
+    @include medium-text;
+    margin-bottom: 8px;
+    color: $gray-800;
+  }
+  &__price {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 130%;
+    color: $gray-900;
+    display: flex;
+    & .price--type_sale {
+      color: $danger;
+      margin-right: 12px;
+    }
+    & .price--type_crossed-out {
+      color: $gray-700;
+      font-weight: normal;
+      font-size: 18px;
+      text-decoration-line: line-through;
+    }
+  }
+  & + & {
+    margin-left: 30px;
+  }
+}
+
+input {
+  padding: 11px 16px 12px;
+  border: 1px solid $gray-100;
+  border-radius: 4px;
+  &::placeholder {
+    color: $gray-600;
+    @include small-text;
+  }
+}
+
+.button {
+  @include button-text;
+  padding: 0 40px;
+  border-radius: 4px;
+  &--type-border {
+    border: 1px solid $primary;
+    color: $primary;
+    background: $white;
+  }
+  &--type-color {
+    border: 1px solid $primary;
+    color: $white;
+    background: $primary;
+  }
 }
