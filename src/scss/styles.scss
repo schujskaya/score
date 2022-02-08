@@ -6,6 +6,7 @@ $primary: #17696a;
 $gray-100: #d7dadd;
 $gray-200: #f4f5f6;
 $gray-300: #e5e8ed;
+$gray-400: #d7dadd;
 $gray-500: #b3b7bc;
 $gray-600: #9a9ca5;
 $gray-700: #787a80;
@@ -314,34 +315,8 @@ body {
     letter-spacing: 0.5px;
     margin: 0 60px;
   }
-  & .subscribe-form {
+  .subscribe-form {
     margin: 0 60px;
-    display: flex;
-    flex-wrap: wrap;
-    &__label {
-      display: block;
-      margin-bottom: 8px;
-      width: 100%;
-    }
-    &__input {
-      border-bottom-right-radius: 0;
-      border-top-right-radius: 0;
-      line-height: 44px;
-      padding: 0 40px;
-      margin-bottom: 20px;
-    }
-    &__button {
-      border-bottom-left-radius: 0;
-      border-top-left-radius: 0;
-      border: 1px solid #17696a;
-      color: #fff;
-      background: #17696a;
-      font-weight: bold;
-      letter-spacing: 0.5px;
-      line-height: 44px;
-      padding: 0 40px;
-      margin-bottom: 20px;
-    }
   }
 }
 
@@ -403,8 +378,6 @@ body {
     top: 60px;
     right: 0;
   }
-  & button {
-  }
 }
 
 .sale {
@@ -434,25 +407,204 @@ body {
     top: 60px;
     right: 0;
   }
-  & button {
-  }
 }
 
 .applications {
   background-color: $gray-900;
+  padding: 60px 0;
+  & .container {
+    position: relative;
+  }
+  &__title {
+    margin-left: 50%;
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 130%;
+    color: $white;
+    margin-bottom: 50px;
+  }
+  &__buttons {
+    margin-left: 50%;
+  }
+  &__image {
+    position: absolute;
+    bottom: -60px;
+  }
 }
 
 .benefits {
+  padding: 120px 0;
   &__list {
     display: flex;
+    justify-content: space-between;
+    text-align: center;
+    & img {
+      margin-bottom: 24px;
+    }
+  }
+  &__item {
+    width: 25%;
+    & + & {
+      border-left: 1px solid #dadbdd;
+    }
+  }
+  &__title {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 150%;
+    color: $gray-900;
+    margin-bottom: 8px;
+  }
+  &__subtitle {
+    font-size: 16px;
+    line-height: 160%;
+    color: $gray-700;
+  }
+}
+.instagram {
+  & .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__subtitle {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: $gray-900;
+    margin-bottom: 8px;
+  }
+  &__title {
+    font-weight: 900;
+    font-size: 46px;
+    line-height: 130%;
+    color: $gray-900;
+    margin-bottom: 60px;
+  }
+  &__list {
+    display: flex;
+    &-item {
+      & + & {
+        margin-left: 15px;
+      }
+    }
+  }
+}
+.blog {
+  padding: 80px 0;
+  & .container {
+    position: relative;
+  }
+  &__cards {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__card {
+    box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.08), 0px 30px 24px -10px rgba(154, 156, 165, 0.05),
+      0px 12px 10px -6px rgba(154, 156, 165, 0.04), 0px 4px 4px -4px rgba(30, 33, 44, 0.03);
+    border-radius: 4px;
+    width: calc(50% - 15px);
+    &-image {
+      margin-bottom: 24px;
+    }
+    &-title {
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 150%;
+      color: $gray-900;
+      margin-bottom: 12px;
+      padding: 0 24px;
+    }
+    &-meta {
+      font-size: 14px;
+      line-height: 150%;
+      color: $gray-700;
+      margin-bottom: 16px;
+      display: flex;
+      padding: 0 24px;
+      & div {
+        padding-right: 12px;
+      }
+    }
+    &-description {
+      padding: 0 24px;
+      font-size: 16px;
+      line-height: 160%;
+      color: $gray-800;
+      margin-bottom: 21px;
+    }
+    & + & {
+      margin-left: 30px;
+    }
+  }
+  &__title {
+    @include display-title;
+    color: $gray-900;
+    margin-bottom: 60px;
+    text-align: left;
+  }
+  & .button {
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 }
 
 .brands {
+  padding: 80px 0;
   &__list {
     display: flex;
+    justify-content: space-between;
   }
 }
+.subscribe {
+  background-color: $gray-200;
+  padding: 65px 0;
+  & .container {
+    background-image: url(/src/images/subscribe2.png);
+    background-position: center right;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  &__title {
+    margin-top: 35px;
+    margin-bottom: 24px;
+    font-weight: 900;
+    font-size: 46px;
+    line-height: 130%;
+    color: $gray-900;
+  }
+  & &-form__description {
+    margin-bottom: 32px;
+    font-size: 20px;
+    line-height: 150%;
+    color: $gray-700;
+    width: 100%;
+  }
+  &-form__radio label {
+    border: 1px solid $gray-400;
+    box-sizing: border-box;
+    border-radius: 4px;
+    color: $gray-700;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 32px;
+    padding: 0 16px;
+    display: inline-block;
+    border-radius: 4px;
+    margin-bottom: 32px;
+    &.checked {
+      background: #17696a;
+      color: $white;
+    }
+  }
+  &-form__checkbox {
+    width: 100%;
+    margin-bottom: 35px;
+  }
+}
+
 footer {
   @include small-text;
   background-color: $gray-900;
@@ -460,12 +612,20 @@ footer {
 }
 
 .footer-top {
-  display: flex;
+  padding: 60px 0 40px;
+  & .container {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .footer-bottom {
-  display: flex;
+  & .container {
+    display: flex;
+    justify-content: space-between;
+  }
   border-top: 1px solid rgba($white, $opacity-15);
+  padding: 24px 0 32px;
 }
 
 img {
@@ -561,5 +721,34 @@ input {
     border: 1px solid $primary;
     color: $white;
     background: $primary;
+  }
+}
+
+.subscribe-form {
+  display: flex;
+  flex-wrap: wrap;
+  &__label {
+    display: block;
+    margin-bottom: 8px;
+    width: 100%;
+  }
+  &__input {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    line-height: 44px;
+    padding: 0 40px;
+    margin-bottom: 20px;
+  }
+  &__button {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    border: 1px solid #17696a;
+    color: #fff;
+    background: #17696a;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    line-height: 44px;
+    padding: 0 40px;
+    margin-bottom: 20px;
   }
 }
