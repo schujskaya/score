@@ -93,6 +93,8 @@ $opacity-60: 0.6;
   letter-spacing: 0.5px;
 }
 
+
+
 body {
   font-family: $poppins;
   color: $gray-800;
@@ -244,6 +246,12 @@ body {
 
 .main-slider {
   position: relative;
+  -webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
   & .container {
     position: relative;
     padding: 140px 0 410px;
@@ -252,6 +260,8 @@ body {
     background-image: url("/src/images/main-slider1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    animation-name: fade;
+    animation-duration: 1.5s;
   }
   &__title {
     font-size: 72px;
@@ -277,13 +287,14 @@ body {
     top: calc(50% - 56px);
     width: 48px;
     height: 48px;
-    background: $white;
+    background-color: $white;
     opacity: 0.5;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    margin: 32px;
+    margin: 32px;    
+    
   }
   &__next {
     position: absolute;
@@ -291,13 +302,13 @@ body {
     top: calc(50% - 56px);
     width: 48px;
     height: 48px;
-    background: $white;
+    background-color: $white;
     opacity: 0.5;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    margin: 32px;
+    margin: 32px;    
   }
   &__nav {
     position: absolute;
@@ -324,6 +335,14 @@ body {
   }
 }
 
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .categories {
   position: relative;
   top: -60px;
@@ -452,7 +471,7 @@ body {
 }
 
 .populars {
-  padding: 115px 0  153px;
+  padding: 115px 0 153px;
   &__title {
     @include display-title;
     color: $gray-900;
@@ -514,7 +533,7 @@ body {
 }
 
 .sale {
-  padding: 102px 0  148px;
+  padding: 102px 0 148px;
   text-align: center;
   & .container {
     position: relative;
@@ -564,7 +583,7 @@ body {
   &__image {
     position: absolute;
     bottom: -60px;
-    left:-28px;
+    left: -28px;
   }
 }
 
@@ -581,8 +600,8 @@ body {
   &__item {
     width: 25%;
     & + & {
-      border-left: 1px solid #dadbdd;      
-        margin-left: 30px;     
+      border-left: 1px solid #dadbdd;
+      margin-left: 30px;
     }
   }
   &__title {
