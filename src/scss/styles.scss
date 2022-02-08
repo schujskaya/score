@@ -80,8 +80,11 @@ $opacity-60: 0.6;
 
 @mixin display-title {
   font-weight: 900;
-  font-size: 46px;
+  font-size: 30px;
   line-height: 130%;
+  @media only screen and (min-width: 980px) {
+    font-size: 46px;
+  }
 }
 
 @mixin button-text {
@@ -110,10 +113,11 @@ body {
   letter-spacing: -0.045em;
   color: rgba($white, $opacity-60);
   background-color: $gray-900;
-  padding: 12px 0 11px;
+  padding: 12px 15px 11px;
   .container {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
   &__contacts {
     & span {
@@ -149,17 +153,19 @@ body {
 }
 
 .header {
-  padding: 19px 0;
+  padding: 19px 15px;
   font-weight: 600;
   letter-spacing: -0.03em;
   font-size: 15px;
   .container {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
   &__left-block {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
   }
   &__logo {
     padding-top: 6px;
@@ -167,6 +173,7 @@ body {
   }
   &__menu {
     display: flex;
+    flex-wrap: wrap;
     &-item {
       & + & {
         margin-left: 40px;
@@ -179,6 +186,7 @@ body {
   &__right-block {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
   }
   & form {
     position: relative;
@@ -192,8 +200,12 @@ body {
     padding: 15px 16px 12px;
   }
   & input {
-    min-width: 343px;
+    width: 100%;
     padding: 15px 16px 12px;
+    max-width: 100%;
+    @media only screen and (min-width: 980px) {
+      width: 343px;
+    }
   }
   &__favorites {
     display: flex;
@@ -227,7 +239,7 @@ body {
   @include extrasmall-text;
   background-color: $primary;
   color: $white;
-  padding: 9px 0 6px;
+  padding: 9px 15px 6px;
   display: flex;
   justify-content: center;
   &__text {
@@ -252,9 +264,10 @@ body {
   user-select: none;
   & .container {
     position: relative;
-    padding: 140px 0 410px;
+    padding: 140px 0 390px;
   }
   &__item {
+    padding: 0 15px;
     background-image: url("/src/images/main-slider1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -264,18 +277,21 @@ body {
       background-image: url("/src/images/main-slider4.jpg");
     }
     &:nth-of-type(3) {
-      background-image: url("/src/images/main-slider3.jpg"); 
+      background-image: url("/src/images/main-slider3.jpg");
     }
     &:nth-of-type(4) {
-      background-image: url("/src/images/main-slider2.jpg"); 
+      background-image: url("/src/images/main-slider2.jpg");
     }
   }
   &__title {
-    font-size: 72px;
+    font-size: 50px;
     font-weight: 600;
     margin-bottom: 50px;
     letter-spacing: -0.04em;
     color: $gray-900;
+    @media only screen and (min-width: 980px) {
+      font-size: 72px;
+    }
   }
   &__subtitle {
     font-size: 18px;
@@ -287,6 +303,7 @@ body {
   }
   & .button--type-border {
     margin-right: 20px;
+    margin-bottom: 20px;
   }
   &__prev {
     position: absolute;
@@ -296,11 +313,14 @@ body {
     height: 48px;
     background-color: $white;
     opacity: 0.5;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     margin: 32px;
+    @media only screen and (min-width: 980px) {
+      display: flex;
+    }
   }
   &__next {
     position: absolute;
@@ -310,17 +330,24 @@ body {
     height: 48px;
     background-color: $white;
     opacity: 0.5;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     margin: 32px;
+    @media only screen and (min-width: 980px) {
+      display: flex;
+    }
   }
   &__nav {
     position: absolute;
     left: 0;
     bottom: 178px;
-    display: flex;
+    display: none;
+    flex-wrap: wrap;
+    @media only screen and (min-width: 768px) {
+      display: flex;
+    }
     &-item {
       width: 176px;
       border-bottom: 2px solid rgba($gray-800, $opacity-30);
@@ -349,6 +376,7 @@ body {
     opacity: 1;
   }
 }
+
 .categories {
   position: relative;
   top: -60px;
@@ -360,10 +388,16 @@ body {
   .container {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    @media only screen and (min-width: 980px) {
+      flex-wrap: nowrap;
+    }
   }
   &__card {
     & + & {
-      margin-left: 30px;
+      @media only screen and (min-width: 980px) {
+        margin-left: 30px;
+      }
     }
     img {
       margin-bottom: 9px;
@@ -372,11 +406,18 @@ body {
 }
 
 .carousel {
-  padding: 120px 30px;
+  padding: 120px 15px;
+  @media only screen and (min-width: 980px) {
+    padding: 120px 30px;
+  }
   &__list {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin-bottom: 92px;
+    @media only screen and (min-width: 980px) {
+      flex-wrap: nowrap;
+    }
   }
   &__title {
     font-weight: 600;
@@ -422,7 +463,7 @@ body {
 .main-grid {
   padding: 58px 30px;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap;  
   &__subtitle {
     @include small-text-uppercase;
     margin: 60px 60px 12px;
@@ -437,13 +478,19 @@ body {
   &__item {
     height: 496px;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;    
   }
   &__item--width-40 {
-    width: calc(40% - 8px);
+    width: 100%;
+    @media only screen and (min-width: 980px) {
+      width: calc(40% - 8px);
+    }
   }
   &__item--width-60 {
-    width: calc(60% - 8px);
+    width: 100%;
+    @media only screen and (min-width: 980px) {
+      width: calc(60% - 8px);
+    }
   }
   &__item1 {
     background-image: url(/src/images/grid1.jpg);
@@ -472,12 +519,14 @@ body {
     margin: 0 60px;
   }
   .subscribe-form {
-    margin: 0 60px;
+    @media only screen and (min-width: 980px) {
+      margin: 0 60px;
+    }
   }
 }
 
 .populars {
-  padding: 115px 0 153px;
+  padding: 115px 15px 153px;
   &__title {
     @include display-title;
     color: $gray-900;
@@ -487,6 +536,10 @@ body {
   &__list {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    @media only screen and (min-width: 980px) {
+      flex-wrap: nowrap;
+    }
   }
   &__item {
     &-image {
@@ -517,6 +570,10 @@ body {
     display: flex;
     justify-content: space-between;
     margin-bottom: 96px;
+    flex-wrap: wrap;
+    @media only screen and (min-width: 980px) {
+      flex-wrap: nowrap;
+    }
   }
   &__title {
     @include display-title;
@@ -539,7 +596,7 @@ body {
 }
 
 .sale {
-  padding: 102px 0 148px;
+  padding: 102px 15px 148px;
   text-align: center;
   & .container {
     position: relative;
@@ -547,7 +604,11 @@ body {
   &__list {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin-bottom: 93px;
+    @media only screen and (min-width: 980px) {
+      flex-wrap: nowrap;
+    }
   }
   &__title {
     @include display-title;
@@ -571,7 +632,7 @@ body {
 
 .applications {
   background-color: $gray-900;
-  padding: 60px 0 50px;
+  padding: 60px 15px 50px;
   & .container {
     position: relative;
   }
@@ -594,17 +655,22 @@ body {
 }
 
 .benefits {
-  padding: 118px 0;
+  padding: 118px 15px;
   &__list {
     display: flex;
     justify-content: space-between;
     text-align: center;
+    flex-wrap: wrap;
+    @media only screen and (min-width: 980px) {
+      flex-wrap: nowrap;
+    }
     & img {
       margin-bottom: 24px;
     }
   }
   &__item {
     width: 25%;
+    min-width: fit-content;
     & + & {
       border-left: 1px solid #dadbdd;
       margin-left: 30px;
@@ -627,6 +693,7 @@ body {
   & .container {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
   &__subtitle {
     font-weight: bold;
@@ -639,13 +706,17 @@ body {
   }
   &__title {
     font-weight: 900;
-    font-size: 46px;
+    font-size: 30px;
     line-height: 130%;
     color: $gray-900;
     margin-bottom: 60px;
+    @media only screen and (min-width: 980px) {
+      font-size: 46px;
+    }
   }
   &__list {
     display: flex;
+    flex-wrap: wrap;
     &-item {
       & + & {
         margin-left: 15px;
@@ -654,19 +725,26 @@ body {
   }
 }
 .blog {
-  padding: 80px 0;
+  padding: 80px 15px;
   & .container {
     position: relative;
   }
   &__cards {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+    @media only screen and (min-width: 980px) {
+      flex-wrap: nowrap;
+    }
   }
   &__card {
     box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.08), 0px 30px 24px -10px rgba(154, 156, 165, 0.05),
       0px 12px 10px -6px rgba(154, 156, 165, 0.04), 0px 4px 4px -4px rgba(30, 33, 44, 0.03);
-    border-radius: 4px;
-    width: calc(50% - 15px);
+    border-radius: 4px;     
+    width: 100%;
+    @media only screen and (min-width: 980px) {
+      width: calc(50% - 15px); 
+    } 
     &-image {
       margin-bottom: 24px;
     }
@@ -714,15 +792,16 @@ body {
 }
 
 .brands {
-  padding: 80px 0;
+  padding: 80px 15px;
   &__list {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
 }
 .subscribe {
   background-color: $gray-200;
-  padding: 65px 0;
+  padding: 65px 15px;
   & .container {
     background-image: url(/src/images/subscribe2.png);
     background-position: center right;
@@ -774,10 +853,11 @@ footer {
 }
 
 .footer-top {
-  padding: 60px 0 40px;
+  padding: 60px 15px 40px;
   & .container {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
 }
 
@@ -785,9 +865,10 @@ footer {
   & .container {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
   border-top: 1px solid rgba($white, $opacity-15);
-  padding: 24px 0 32px;
+  padding: 24px 15px 32px;
 }
 
 img {
@@ -860,7 +941,9 @@ img {
     }
   }
   & + & {
-    margin-left: 30px;
+    @media only screen and (min-width: 980px) {
+      margin-left: 30px;
+    }
   }
 }
 
