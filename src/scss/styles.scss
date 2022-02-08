@@ -18,6 +18,7 @@ $success: #03cea4;
 
 $opacity-15: 0.15;
 $opacity-30: 0.3;
+$opacity-60: 0.6;
 
 @mixin extrasmall-text {
   font: {
@@ -99,50 +100,153 @@ body {
 }
 
 .container {
-  max-width: 1230px;
+  max-width: 1220px;
   margin: 0 auto;
 }
 
 .topbar {
-  @include small-text;
+  font-size: 14px;
+  font-weight: 200;
+  letter-spacing: -0.045em;
+  color: rgba($white, $opacity-60);
   background-color: $gray-900;
-  color: $white;
-  padding: 11px 0 12px;
+  padding: 12px 0 11px;
   .container {
     display: flex;
     justify-content: space-between;
   }
+  &__contacts {
+    & span {
+      font-weight: 600;
+    }
+  }
   &__nav {
     display: flex;
+    &-item {
+      & + & {
+        margin-left: 32px;
+      }
+    }
+  }
+  &__actions {
+    display: flex;
+  }
+  &__language select {
+    background-color: $gray-900;
+    color: rgba($white, $opacity-60);
+    font-size: 14px;
+    font-weight: 200;
+    border: none;
+  }
+  &__login {
+    display: flex;
+    margin-left: 56px;
+    & svg {
+      margin-right: 9px;
+      padding: 2px 0 0;
+    }
   }
 }
 
 .header {
-  padding: 20px 0;
+  padding: 19px 0;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  font-size: 15px;
   .container {
     display: flex;
     justify-content: space-between;
   }
-}
-
-.menu {
-  display: flex;
+  &__left-block {
+    display: flex;
+    align-items: center;
+  }
+  &__logo {
+    padding-top: 6px;
+    margin-right: 59px;
+  }
+  &__menu {
+    display: flex;
+    &-item {
+      & + & {
+        margin-left: 40px;
+      }
+      &.sale-item {
+        color: $danger;
+      }
+    }
+  }
+  &__right-block {
+    display: flex;
+    align-items: center;
+  }
+  & form {
+    position: relative;
+  }
+  & button {
+    position: absolute;
+    border: none;
+    background: transparent;
+    top: 0;
+    right: 0;
+    padding: 15px 16px 12px;
+  }
+  & input {
+    min-width: 343px;
+    padding: 15px 16px 12px;
+  }
+  &__favorites {
+    display: flex;
+    padding-right: 20px;
+    margin-left: 48px;
+    & div {
+      font-size: 16px;
+      margin-left: 8px;
+    }
+  }
+  &__shopping-cart {
+    display: flex;
+    padding-left: 17px;
+    border-left: 1px solid $gray-400;
+    & div {
+      background: #03cea4;
+      height: 20px;
+      padding: 0 8px;
+      border-radius: 4px;
+      display: inline-block;
+      font-weight: 900;
+      font-size: 12px;
+      color: #ffffff;
+      line-height: 20px;
+      margin-left: 8px;
+    }
+  }
 }
 
 .banner-string {
   @include extrasmall-text;
   background-color: $primary;
   color: $white;
-  padding: 8px 0;
+  padding: 9px 0 6px;
   display: flex;
   justify-content: center;
+  &__text {
+    padding: 0 17px;
+    font-weight: 600;
+    letter-spacing: 0.009em;
+  }
+  &__link {
+    font-size: 10px;
+    color: $white;
+    font-weight: 400;
+  }
 }
 
 .main-slider {
   position: relative;
   & .container {
     position: relative;
-    padding: 140px 0 415px;
+    padding: 140px 0 410px;
   }
   &__item {
     background-image: url("/src/images/main-slider1.jpg");
@@ -150,12 +254,22 @@ body {
     background-repeat: no-repeat;
   }
   &__title {
-    @include display-1;
-    margin-bottom: 60px;
+    font-size: 72px;
+    font-weight: 600;
+    margin-bottom: 50px;
+    letter-spacing: -0.04em;
+    color: $gray-900;
   }
   &__subtitle {
-    @include medium-text-uppercase;
-    margin-bottom: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    color: $gray-900;
+  }
+  & .button--type-border {
+    margin-right: 20px;
   }
   &__prev {
     position: absolute;
@@ -188,28 +302,29 @@ body {
   &__nav {
     position: absolute;
     left: 0;
-    bottom: 180px;
+    bottom: 178px;
     display: flex;
     &-item {
-      width: 178px;
+      width: 176px;
       border-bottom: 2px solid rgba($gray-800, $opacity-30);
       font-weight: bold;
       font-size: 28px;
       line-height: 150%;
       color: $gray-800;
-      margin: 12px 0px;
+      padding: 10px 0;
       opacity: 0.6;
       &.active {
         border-bottom: 2px solid $gray-800;
         opacity: 1;
+      }
+      & + & {
+        margin-left: 5px;
       }
     }
   }
 }
 
 .categories {
-  display: flex;
-  justify-content: center;
   position: relative;
   top: -60px;
   text-align: center;
@@ -217,26 +332,42 @@ body {
   font-size: 20px;
   line-height: 150%;
   color: $gray-800;
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+  &__card {
+    & + & {
+      margin-left: 30px;
+    }
+    img {
+      margin-bottom: 9px;
+    }
+  }
 }
 
 .carousel {
-  padding: 90px 30px;
+  padding: 120px 30px;
   &__list {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 96px;
+    margin-bottom: 92px;
   }
   &__title {
-    @include display-title;
-    color: $gray-900;
+    font-weight: 600;
+    font-size: 46px;
+    line-height: 130%;
+    color: #1e212c;
     text-align: center;
     margin-bottom: 24px;
+    letter-spacing: -0.05em;
   }
   &__subtitle {
     font-size: 18px;
     line-height: 150%;
     text-align: center;
     margin-bottom: 60px;
+    letter-spacing: -0.08em;
     &-link {
       display: block;
       color: $primary;
@@ -264,7 +395,7 @@ body {
 }
 
 .main-grid {
-  padding: 90px 30px;
+  padding: 58px 30px;
   display: flex;
   flex-wrap: wrap;
   &__subtitle {
@@ -279,7 +410,7 @@ body {
     color: $gray-900;
   }
   &__item {
-    height: 500px;
+    height: 496px;
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -311,7 +442,7 @@ body {
   & button {
     background: transparent;
     font-size: 14px;
-    line-height: 44px;
+    line-height: 40px;
     letter-spacing: 0.5px;
     margin: 0 60px;
   }
@@ -321,7 +452,7 @@ body {
 }
 
 .populars {
-  padding: 90px 0;
+  padding: 115px 0  153px;
   &__title {
     @include display-title;
     color: $gray-900;
@@ -330,15 +461,15 @@ body {
   }
   &__list {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
   }
   &__item {
     &-image {
-      margin-bottom: 24px;
+      margin-bottom: 15px;
     }
     &-title {
       font-weight: bold;
-      font-size: 20px;
+      font-size: 18px;
       line-height: 150%;
       color: $gray-900;
       text-align: center;
@@ -367,21 +498,23 @@ body {
     color: $gray-900;
     margin-bottom: 60px;
     text-align: left;
+    font-weight: 600;
+    letter-spacing: -0.07em;
   }
   &__prev {
     position: absolute;
-    top: 60px;
+    top: 35px;
     right: 48px;
   }
   &__next {
     position: absolute;
-    top: 60px;
+    top: 35px;
     right: 0;
   }
 }
 
 .sale {
-  padding: 80px 0;
+  padding: 102px 0  148px;
   text-align: center;
   & .container {
     position: relative;
@@ -389,34 +522,36 @@ body {
   &__list {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 96px;
+    margin-bottom: 93px;
   }
   &__title {
     @include display-title;
     color: $gray-900;
     margin-bottom: 60px;
     text-align: left;
+    font-weight: 600;
+    letter-spacing: -0.07em;
   }
   &__prev {
     position: absolute;
-    top: 60px;
+    top: 32px;
     right: 48px;
   }
   &__next {
     position: absolute;
-    top: 60px;
+    top: 32px;
     right: 0;
   }
 }
 
 .applications {
   background-color: $gray-900;
-  padding: 60px 0;
+  padding: 60px 0 50px;
   & .container {
     position: relative;
   }
   &__title {
-    margin-left: 50%;
+    margin-left: 51%;
     font-weight: 900;
     font-size: 32px;
     line-height: 130%;
@@ -424,16 +559,17 @@ body {
     margin-bottom: 50px;
   }
   &__buttons {
-    margin-left: 50%;
+    margin-left: 51%;
   }
   &__image {
     position: absolute;
     bottom: -60px;
+    left:-28px;
   }
 }
 
 .benefits {
-  padding: 120px 0;
+  padding: 118px 0;
   &__list {
     display: flex;
     justify-content: space-between;
@@ -445,7 +581,8 @@ body {
   &__item {
     width: 25%;
     & + & {
-      border-left: 1px solid #dadbdd;
+      border-left: 1px solid #dadbdd;      
+        margin-left: 30px;     
     }
   }
   &__title {
@@ -635,7 +772,7 @@ img {
   text-align: left;
   &__image {
     position: relative;
-    margin-bottom: 16px;
+    margin-bottom: 5px;
   }
   &__rewievs-stars {
     display: flex;
@@ -645,7 +782,7 @@ img {
   }
   &__favorites {
     position: absolute;
-    bottom: 16px;
+    bottom: 26px;
     right: 16px;
     width: 32px;
     height: 32px;
@@ -675,6 +812,8 @@ img {
     @include medium-text;
     margin-bottom: 8px;
     color: $gray-800;
+    margin-left: 16px;
+    letter-spacing: -0.08em;
   }
   &__price {
     font-weight: bold;
@@ -682,6 +821,8 @@ img {
     line-height: 130%;
     color: $gray-900;
     display: flex;
+    margin-left: 16px;
+    letter-spacing: -0.08em;
     & .price--type_sale {
       color: $danger;
       margin-right: 12px;
@@ -712,10 +853,11 @@ input {
   @include button-text;
   padding: 0 40px;
   border-radius: 4px;
+  letter-spacing: -0.7px;
   &--type-border {
     border: 1px solid $primary;
     color: $primary;
-    background: $white;
+    background: transparent;
   }
   &--type-color {
     border: 1px solid $primary;
@@ -743,7 +885,7 @@ input {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
     border: 1px solid #17696a;
-    color: #fff;
+    color: $white;
     background: #17696a;
     font-weight: bold;
     letter-spacing: 0.5px;
