@@ -55,25 +55,7 @@ window.addEventListener('load', () => {
     let feedback__btn = document.getElementById('subscribe-send');
     if (feedback__btn) {
       feedback__btn.addEventListener('click', send_mail);
-    }
-  
-    let form_write_us = document.querySelectorAll('#subscribe_form');
-    for (let i = 0; i < form_write_us.length; i++) {
-      form_write_us[i].addEventListener('input', valid_form_write_us);
-    }
-  
-    function valid_form_write_us (e) {
-      let error = [];
-      let inp = document.querySelectorAll('#form_write_us input');    
-  
-      if (error.length == 0) {
-        feedback__btn.removeAttribute('disabled');
-        feedback__btn.style.opacity = '1';
-      } else if (error.length > 0) {
-        feedback__btn.setAttribute('disabled', 'disabled');
-        feedback__btn.style.opacity = '';
-      }
-    }
+    }     
   
     function send_mail (e) {
       e.preventDefault();
