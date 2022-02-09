@@ -15,6 +15,7 @@ function previousSlide() {
 
 function currentSlide(n) {
     showSlides(slideIndex = n);
+    makeTimer();
 }
 
 function showSlides(n) {
@@ -36,6 +37,7 @@ function showSlides(n) {
 
 let timer = 0;
 makeTimer();
+
 function makeTimer() {
     clearInterval(timer);
     timer = setInterval(function () {
@@ -45,3 +47,86 @@ function makeTimer() {
 }
 
 /* main-slider for index.html END */
+
+/* subscribe_form START */
+
+window.addEventListener('load', () => {
+	
+    let feedback__btn = document.getElementById('subscribe-send');
+    if (feedback__btn) {
+      feedback__btn.addEventListener('click', send_mail);
+    }
+  
+    let form_write_us = document.querySelectorAll('#subscribe_form');
+    for (let i = 0; i < form_write_us.length; i++) {
+      form_write_us[i].addEventListener('input', valid_form_write_us);
+    }
+  
+    function valid_form_write_us (e) {
+      let error = [];
+      let inp = document.querySelectorAll('#form_write_us input');    
+  
+      if (error.length == 0) {
+        feedback__btn.removeAttribute('disabled');
+        feedback__btn.style.opacity = '1';
+      } else if (error.length > 0) {
+        feedback__btn.setAttribute('disabled', 'disabled');
+        feedback__btn.style.opacity = '';
+      }
+    }
+  
+    function send_mail (e) {
+      e.preventDefault();
+      
+      let women = "";
+      if (document.getElementById('women').checked) {
+        women = document.getElementById('women').value;
+      }
+      let men = "";
+      if (document.getElementById('men').checked) {
+        men = document.getElementById('men').value;
+      }
+      let girls = "";
+      if (document.getElementById('girls').checked) {
+        girls = document.getElementById('girls').value;
+      }
+      let boys = "";
+      if (document.getElementById('boys').checked) {
+        boys = document.getElementById('boys').value;
+      }
+      let user_email = document.getElementById('user_email').value;
+      let agree = document.getElementById('agree').value;
+      document.getElementById('subscribe_form').reset();
+      document.querySelector('.subscribe-form__succes').style.display = 'block';
+      setTimeout(function(){
+          document.querySelector('.subscribe-form__succes').style.display = 'none';
+       }, 5000);
+      
+      let data = new FormData();
+      data.append('women', women);
+      data.append('men', men);
+      data.append('girls', girls);
+      data.append('boys', boys);
+      data.append('user_email', user_email);
+      data.append('agree', agree);
+  
+      fetch('mail.php',
+        {
+          method: "POST",
+          body: data
+        })
+        .then(response => {
+          if (response.status !== 200) {
+            return Promise.reject();
+          }
+          return response.json();
+        })
+        .then(function (data) {
+          console.log(JSON.stringify(data));
+        })
+        .catch(() => console.log('Error'));
+    }
+    
+  })
+
+  /* subscribe_form END */
