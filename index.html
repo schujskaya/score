@@ -180,7 +180,7 @@
 								fill="white" />
 						</svg>
 					</label>
-					<select name="unittype" required>
+					<select name="unittype">
 						<option value="1" selected>Eng / $</option>
 						<option value="2">Ru / ₽</option>
 					</select>
@@ -1233,18 +1233,17 @@
 				<div class="subscribe-form__radio">
 					<input type="radio" id="women" value="women" name="user_type"><label for="women">Women</label>
 					<input type="radio" id="men" value="men" name="user_type"><label for="men">Men</label>
-					<input type="radio" id="girls" value="girls" name="user_type" checked><label for="girls"
+					<input type="radio" id="girls" value="girls" name="user_type" ><label for="girls"
 						class="checked">Girls</label>
 					<input type="radio" id="boys" value="boys" name="user_type"><label for="boys">Boys</label>
 				</div>
-				<label class="subscribe-form__label" for="email" >Email</label>
-				<input class="subscribe-form__input" id="user_email" placeholder="Your working email"  name="user_email">
-				<input class="subscribe-form__button" type="submit" name="send" id="subscribe-send" value="Subscribe">
+				<label class="subscribe-form__label" for="user_email" >Email</label>
+				<input class="subscribe-form__input required" id="user_email" placeholder="Your working email"  name="user_email" >
+				<button class="subscribe-form__button" type="submit" name="send" id="subscribe-send" value="Subscribe" disabled="disabled">Subscribe</button>
 				<div class="subscribe-form__checkbox">
-					<input type="checkbox" checked name="agree" id="agree" /><label for="agree">I agree to receive
-						communications from Createx Store.</label>
-				<div class="subscribe-form__succes">Form sent successfully!</div>		
-				</div>
+					<input type="checkbox" name="agree" id="agree" class="subscribe-form__input required"/><label for="agree"> I agree to receive
+						communications from Createx Store.</label></div>
+				<div class="subscribe-form__succes">Form sent successfully!</div>				
 			</form>
 		</div>
 	</section>

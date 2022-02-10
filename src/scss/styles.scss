@@ -845,11 +845,12 @@ body {
     margin-bottom: 35px;
   }
   &-form__succes {
-    margin: 25px 0;
     color: #17696a;
-    font-size: 20px;   
+    font-size: 20px;  
+    position: absolute;
+    bottom: 0;
     display: none;
-}
+  }
 }
 
 footer {
@@ -983,6 +984,7 @@ input {
 .subscribe-form {
   display: flex;
   flex-wrap: wrap;
+  position: relative;
   &__label {
     display: block;
     margin-bottom: 8px;
@@ -1006,5 +1008,6 @@ input {
     line-height: 44px;
     padding: 0 40px;
     margin-bottom: 20px;
+    opacity: 0.6;
   }
 }
