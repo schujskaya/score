@@ -18,6 +18,7 @@ $success: #03cea4;
 
 $opacity-15: 0.15;
 $opacity-30: 0.3;
+$opacity-50: 0.5;
 $opacity-60: 0.6;
 
 @mixin extrasmall-text {
@@ -96,9 +97,17 @@ $opacity-60: 0.6;
   letter-spacing: 0.5px;
 }
 
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 body {
   font-family: $poppins;
-  color: $gray-800;
   margin: 0;
 }
 
@@ -264,80 +273,85 @@ body {
   user-select: none;
   & .container {
     position: relative;
-    padding: 140px 0 390px;
+    padding: 100px 0;
+    @media only screen and (min-width: 980px) {
+      padding: 140px 0 390px;
+    }
   }
   &__item {
     padding: 0 15px;
-    background-image: url("/src/images/main-slider1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     animation-name: fade;
     animation-duration: 1.5s;
+    &:nth-of-type(1) {
+      background-color: #fce4d7;
+      @media only screen and (min-width: 768px) {
+        background-image: url("/src/images/main-slider1.jpg");
+      }
+    }
     &:nth-of-type(2) {
-      background-image: url("/src/images/main-slider4.jpg");
+      background-color: #ddede4;
+      @media only screen and (min-width: 768px) {
+        background-image: url("/src/images/main-slider4.jpg");
+      }
     }
     &:nth-of-type(3) {
-      background-image: url("/src/images/main-slider3.jpg");
+      background-color: #dbdcd7;
+      @media only screen and (min-width: 768px) {
+        background-image: url("/src/images/main-slider3.jpg");
+      }
     }
     &:nth-of-type(4) {
-      background-image: url("/src/images/main-slider2.jpg");
+      background-color: #d5e5df;
+      @media only screen and (min-width: 768px) {
+        background-image: url("/src/images/main-slider2.jpg");
+      }
     }
   }
   &__title {
-    font-size: 50px;
+    font-size: 45px;
     font-weight: 600;
-    margin-bottom: 50px;
     letter-spacing: -0.04em;
     color: $gray-900;
+    margin-bottom: 50px;
+    overflow-wrap: break-word;
     @media only screen and (min-width: 980px) {
       font-size: 72px;
     }
   }
   &__subtitle {
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 700;
     letter-spacing: 1px;
+    color: $gray-900;
     text-transform: uppercase;
     margin-bottom: 6px;
-    color: $gray-900;
   }
-  & .button--type-border {
-    margin-right: 20px;
-    margin-bottom: 20px;
+  & .button:first-of-type {
+    margin: 0 20px 20px 0;
+  }
+  &__arrow {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    top: calc(50% - 56px);
+    background-color: rgba($white, .5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 32px;
+    cursor: pointer;
+    @media only screen and (min-width: 980px) {
+      display: flex;
+    }
   }
   &__prev {
-    position: absolute;
     left: 0;
-    top: calc(50% - 56px);
-    width: 48px;
-    height: 48px;
-    background-color: $white;
-    opacity: 0.5;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    margin: 32px;
-    @media only screen and (min-width: 980px) {
-      display: flex;
-    }
   }
   &__next {
-    position: absolute;
     right: 0;
-    top: calc(50% - 56px);
-    width: 48px;
-    height: 48px;
-    background-color: $white;
-    opacity: 0.5;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    margin: 32px;
-    @media only screen and (min-width: 980px) {
-      display: flex;
-    }
   }
   &__nav {
     position: absolute;
@@ -345,18 +359,19 @@ body {
     bottom: 178px;
     display: none;
     flex-wrap: wrap;
-    @media only screen and (min-width: 768px) {
+    cursor: pointer;
+    @media only screen and (min-width: 980px) {
       display: flex;
     }
     &-item {
-      width: 176px;
-      border-bottom: 2px solid rgba($gray-800, $opacity-30);
+      width: 176px;      
       font-weight: bold;
       font-size: 28px;
       line-height: 150%;
       color: $gray-800;
       padding: 10px 0;
-      opacity: 0.6;
+      border-bottom: 2px solid rgba($gray-800, .3);
+      opacity: .6;
       &.active {
         border-bottom: 2px solid $gray-800;
         opacity: 1;
@@ -365,37 +380,31 @@ body {
         margin-left: 5px;
       }
     }
-  }
-}
-
-@keyframes fade {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
+  }  
 }
 
 .categories {
   position: relative;
-  top: -60px;
   text-align: center;
   font-weight: bold;
   font-size: 20px;
   line-height: 150%;
   color: $gray-800;
+  padding-top: 15px;
+  @media only screen and (min-width: 980px) {
+    top: -65px;
+  }
   .container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    @media only screen and (min-width: 980px) {
+    @media only screen and (min-width: 768px) {
       flex-wrap: nowrap;
     }
   }
   &__card {
     & + & {
-      @media only screen and (min-width: 980px) {
+      @media only screen and (min-width: 768px) {
         margin-left: 30px;
       }
     }
@@ -406,7 +415,7 @@ body {
 }
 
 .carousel {
-  padding: 120px 15px;
+  padding: 50px 15px;
   @media only screen and (min-width: 980px) {
     padding: 120px 30px;
   }
@@ -562,7 +571,7 @@ body {
 .trends {
   background-color: $gray-300;
   text-align: center;
-  padding: 80px 0;
+  padding: 80px 15px;
   & .container {
     position: relative;
   }
@@ -571,7 +580,7 @@ body {
     justify-content: space-between;
     margin-bottom: 96px;
     flex-wrap: wrap;
-    @media only screen and (min-width: 980px) {
+    @media only screen and (min-width: 768px) {
       flex-wrap: nowrap;
     }
   }
@@ -606,7 +615,7 @@ body {
     justify-content: space-between;
     flex-wrap: wrap;
     margin-bottom: 93px;
-    @media only screen and (min-width: 980px) {
+    @media only screen and (min-width: 768px) {
       flex-wrap: nowrap;
     }
   }
@@ -637,15 +646,19 @@ body {
     position: relative;
   }
   &__title {
-    margin-left: 51%;
     font-weight: 900;
     font-size: 32px;
     line-height: 130%;
     color: $white;
     margin-bottom: 50px;
+    @media only screen and (min-width: 980px) {
+      margin-left: 51%;
+    }
   }
   &__buttons {
-    margin-left: 51%;
+    @media only screen and (min-width: 980px) {
+      margin-left: 51%;
+    }
   }
   &__image {
     position: absolute;
@@ -775,7 +788,9 @@ body {
       margin-bottom: 21px;
     }
     & + & {
-      margin-left: 30px;
+      @media only screen and (min-width: 980px) {
+        margin-left: 30px;
+      }
     }
   }
   &__title {
@@ -956,7 +971,7 @@ img {
     }
   }
   & + & {
-    @media only screen and (min-width: 980px) {
+    @media only screen and (min-width: 768px) {
       margin-left: 30px;
     }
   }
@@ -991,7 +1006,7 @@ input {
 
 .subscribe-form {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   position: relative;
   &__label {
     display: block;
@@ -1018,4 +1033,9 @@ input {
     margin-bottom: 20px;
     opacity: 0.6;
   }
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
 }
