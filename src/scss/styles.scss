@@ -3,6 +3,12 @@
 $poppins: "Poppins", sans-serif;
 
 $primary: #17696a;
+$primary-hover: #145c5d;
+$white: #ffffff;
+$danger: #ff4242;
+$success: #03cea4;
+$warning: #f89828;
+$info: #5a87fc;
 $gray-100: #d7dadd;
 $gray-200: #f4f5f6;
 $gray-300: #e5e8ed;
@@ -12,9 +18,140 @@ $gray-600: #9a9ca5;
 $gray-700: #787a80;
 $gray-800: #424551;
 $gray-900: #1e212c;
-$white: #ffffff;
-$danger: #ff4242;
-$success: #03cea4;
+
+$divider-gradient: linear-gradient(
+  270.01deg,
+  rgba(218, 219, 221, 0) 0%,
+  rgba(218, 219, 221, 0.5) 12.33%,
+  #dadbdd 51.91%,
+  rgba(218, 219, 221, 0.5) 87.85%,
+  rgba(218, 219, 221, 0) 100%
+);
+
+$shadow-small: 0px 80px 80px -20px rgba(154, 156, 165, 0.08), 0px 30px 24px -10px rgba(154, 156, 165, 0.05),
+  0px 12px 10px -6px rgba(154, 156, 165, 0.04), 0px 4px 4px -4px rgba(30, 33, 44, 0.03);
+$shadow-regular: 0px 80px 80px -20px rgba(154, 156, 165, 0.16), 0px 30px 24px -10px rgba(154, 156, 165, 0.1),
+  0px 12px 10px -6px rgba(154, 156, 165, 0.08), 0px 4px 4px -4px rgba(30, 33, 44, 0.05);
+$shadow-large: 0px 60px 80px -20px rgba(30, 33, 44, 0.16), 0px 26px 24px -10px rgba(30, 33, 44, 0.1),
+  0px 12px 10px -6px rgba(30, 33, 44, 0.08), 0px 4px 4px -4px rgba(30, 33, 44, 0.05);
+
+@mixin title-h1 {
+  font: {
+    size: 46px;
+    weight: 900;
+  }  
+  line-height: 130%;
+}
+@mixin title-h2 {
+  font: {
+    size: 32px;
+    weight: 900;
+  }  
+  line-height: 130%;
+}
+@mixin title-h3 {
+  font: {
+    size: 28px;
+    weight: bold;
+  }  
+  line-height: 150%;
+}
+@mixin title-h4 {
+  font: {
+    size: 24px;
+    weight: bold;
+  }
+  line-height: 130%;
+}
+@mixin title-h5 {
+  font: {
+    size: 20px;
+    weight: bold;
+  }  
+  line-height: 130%;
+}
+@mixin title-h6 {
+  font: {
+    size: 16px;
+    weight: bold;
+  }  
+  line-height: 150%;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+@mixin display {
+  font: {
+    size: 72px;
+    weight: 900;
+  }  
+  line-height: 130%;
+  letter-spacing: 1px;
+}
+@mixin lead-regular {
+  font: {
+    size: 20px;    
+  }  
+  line-height: 150%;
+}
+@mixin lead-bold {
+  font: {
+    size: 20px;
+    weight: bold;
+  } 
+  line-height: 150%;
+}
+@mixin large-regular {
+  font: {
+    size: 20px;    
+  }  
+  line-height: 150%;
+}
+@mixin large-bold {
+  font: {
+    size: 18px;
+    weight: bold;
+  }  
+  line-height: 150%;
+}
+@mixin base-regular {
+  font: {
+    size: 16px;    
+  }  
+  line-height: 160%;
+}
+@mixin base-bold {
+  font: {
+    size: 16px;
+    weight: bold;
+  }  
+  line-height: 160%;
+}
+@mixin small-regular {
+  font: {
+    size: 14px;    
+  }
+  line-height: 150%;
+}
+@mixin small-bold {
+  font: {
+    size: 14px;
+    weight: bold;
+  }  
+  line-height: 150%;
+}
+@mixin extrasmall-regular {
+  font: {
+    size: 12px;    
+  }  
+  line-height: 150%;
+}
+@mixin extrasmall-bold {
+  font: {
+    size: 12px;
+    weight: 900;
+  }  
+  line-height: 150%;
+}
 
 $opacity-15: 0.15;
 $opacity-30: 0.3;
@@ -336,7 +473,7 @@ body {
     width: 48px;
     height: 48px;
     top: calc(50% - 56px);
-    background-color: rgba($white, .5);
+    background-color: rgba($white, 0.5);
     display: none;
     align-items: center;
     justify-content: center;
@@ -345,6 +482,14 @@ body {
     cursor: pointer;
     @media only screen and (min-width: 980px) {
       display: flex;
+    }
+    &:hover {
+      background-color: $primary;
+      color: $white;
+      & * {
+        stroke: white;
+        fill: white;
+      }
     }
   }
   &__prev {
@@ -364,14 +509,18 @@ body {
       display: flex;
     }
     &-item {
-      width: 176px;      
+      width: 176px;
       font-weight: bold;
       font-size: 28px;
       line-height: 150%;
       color: $gray-800;
       padding: 10px 0;
-      border-bottom: 2px solid rgba($gray-800, .3);
-      opacity: .6;
+      border-bottom: 2px solid rgba($gray-800, 0.3);
+      opacity: 0.6;
+      &:hover {
+        border-bottom: 2px solid $gray-800;
+        opacity: 0.7;
+      }
       &.active {
         border-bottom: 2px solid $gray-800;
         opacity: 1;
@@ -380,7 +529,7 @@ body {
         margin-left: 5px;
       }
     }
-  }  
+  }
 }
 
 .categories {
@@ -992,15 +1141,26 @@ input {
   padding: 0 40px;
   border-radius: 4px;
   letter-spacing: -0.7px;
+  cursor: pointer;
   &--type-border {
     border: 1px solid $primary;
     color: $primary;
     background: transparent;
+    &:hover {
+      background: $primary;
+      color: $white;
+    }
   }
   &--type-color {
     border: 1px solid $primary;
     color: $white;
     background: $primary;
+    &:hover {
+      background: $primary-hover;
+      color: $white;
+    }
+  }
+  &:hover {
   }
 }
 
