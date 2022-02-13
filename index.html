@@ -644,11 +644,12 @@
 			<div class="main-grid__title">Get 5% Off & Free Delivery</div>
 			<form class="subscribe-form" id="subscribeFormGrid">
 				<label class="subscribe-form__label" for="email">Email</label>
-				<input class="subscribe-form__input" id="userEmail2" placeholder="Your working email" required minlength="6" type="email">
+				<input class="subscribe-form__input email" id="userEmailGrid" placeholder="Your working email" required minlength="6" type="email">
 				<button class="subscribe-form__button" type="submit" name="send" id="subscribeSendGrid"
 						value="Subscribe">Subscribe</button>
 				<div class="subscribe-form__description">*Sign up to be the first to hear about exclusive deals, special
 					offers and upcoming collections.</div>
+				<div class="subscribe-form__succes">Form sent successfully!</div>
 			</form>
 		</div>
 	</section>
@@ -1241,13 +1242,13 @@
 				</div>
 				<label class="subscribe-form__label" for="user_email">Email</label>
 				<div class="wrapper">
-					<input class="subscribe-form__input required" id="userEmail" placeholder="Your working email"
+					<input class="subscribe-form__input required email" id="userEmail" placeholder="Your working email"
 						name="userEmail" required minlength="6" type="email">
 					<button class="subscribe-form__button" type="submit" name="send" id="subscribeSend"
 						value="Subscribe" disabled="disabled">Subscribe</button>
 				</div>
 				<div class="subscribe-form__checkbox">
-					<input type="checkbox" name="agree" id="agree" class="subscribe-form__input required" /><label
+					<input type="checkbox" name="agree" id="agree" class="subscribe-form__input required agree" /><label
 						for="agree"> I agree to receive
 						communications from Createx Store.</label>
 				</div>
