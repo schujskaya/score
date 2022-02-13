@@ -51,6 +51,7 @@ function makeTimer() {
 /* subscribeForm START */
 
 subscribeSend.addEventListener('click', sendMail);
+subscribeSendGrid.addEventListener('click', sendMail);
 
 let formRequired = subscribeForm.querySelectorAll('.required')
 for (let elem of formRequired) {
@@ -90,17 +91,39 @@ function valid_form__required(e) {
   }
 }
 
+function sendData() {
+  let data = new FormData();
+
+  if (women.checked) {
+    data.append('group', women.value);
+  }
+  if (men.checked) {
+    data.append('group', girls.value);
+  }
+  if (girls.checked) {
+    data.append('group', girls.value);
+  }
+  if (boys.checked) {
+    data.append('group', boys.value);
+  }
+  if (userEmail.value.length > 0) {
+    data.append('user_email', userEmail.value);
+  }
+  if (userEmail2.value.length > 0) {
+    data.append('user_email', userEmail2.value);
+  }
+  if (agree.checked) {
+    data.append('agree', agree.value);
+  }
+
+  return data;
+  delete data;
+}
+
 function sendMail(e) {
 
   e.preventDefault();
-
-  let data = new FormData();
-  data.append('women', women.checked);
-  data.append('men', men.checked);
-  data.append('girls', girls.checked);
-  data.append('boys', boys.checked);
-  data.append('user_email', userEmail.value);
-  data.append('agree', agree.checked);
+  data = sendData();
 
   fetch('mail.php',
     {
