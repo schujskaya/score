@@ -1,7 +1,5 @@
 /* main-slider for index.html START */
 
-//const { data } = require("autoprefixer");
-
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -65,6 +63,7 @@ for (let elem of formInput) {
     }
   }
 }
+
 let formInputGrid = subscribeFormGrid.querySelectorAll('input');
 for (let elem of formInputGrid) {
   elem.oninput = function () {
@@ -74,6 +73,16 @@ for (let elem of formInputGrid) {
       buttonDisabled(subscribeSendGrid);
     }
   }
+}
+
+let inputEmail = document.querySelectorAll('.email');
+for (let elem of inputEmail) {  
+  elem.onblur = function() {
+    formName = elem.closest('form');
+    if (!validateEmail(formName)) {       
+      succesDisplay(formName, 'Error e-mail');
+    }
+  };
 }
 
 function validateEmail(e) {
@@ -97,11 +106,11 @@ function buttonActive(e) {
   e.style.opacity = '1';
 }
 
-function succesDisplay(e) {
-  let formSucces = e.querySelector('.subscribe-form__succes');
-  formSucces.style.display = 'block';
+function succesDisplay(e, a) {
+  let formSucces = e.querySelector('.subscribe-form__succes');  
+  formSucces.innerHTML = a;  
   setTimeout(function () {
-    formSucces.style.display = 'none';
+    formSucces.innerHTML = '';
   }, 5000);
 }
 
@@ -153,7 +162,7 @@ function sendMail(e) {
     })
     .catch(() => console.log('Error'));
   formName.reset();
-  succesDisplay(formName);
+  succesDisplay(formName, "Form sent successfully!");
 }
 
 /* subscribeForm END */
