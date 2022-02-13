@@ -1161,6 +1161,7 @@ input {
     }
   }
   &:hover {
+    background: $primary-hover;
   }
 }
 
@@ -1198,4 +1199,8 @@ input {
 .wrapper {
   display: flex;
   flex-wrap: wrap;
+}
+
+input:invalid {
+  border-color: red;
 }

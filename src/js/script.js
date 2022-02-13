@@ -51,11 +51,24 @@ function makeTimer() {
 /* subscribeForm START */
 
 subscribeSend.addEventListener('click', sendMail);
-subscribeSendGrid.addEventListener('click', sendMail);
 
-let formRequired = subscribeForm.querySelectorAll('.required')
-for (let elem of formRequired) {
-  elem.addEventListener('input', valid_form__required)
+let formInput = subscribeForm.querySelectorAll('input');
+for (let elem of formInput) {
+  elem.oninput = function () {
+    if (validateEmail() && validateAgree()) {
+      subscribeSendActive();
+    } else {
+      subscribeSendDisabled();
+    }
+  }
+}
+
+function validateEmail() {
+  var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+  return reg.test(userEmail.value);
+}
+function validateAgree() {
+  return agree.checked;
 }
 
 function subscribeSendDisabled() {
@@ -76,48 +89,29 @@ function succesDisplay() {
   }, 5000);
 }
 
-function valid_form__required(e) {
-  let error = []
-  for (let elem of formRequired) {
-    if (elem.value.trim().length < 1) {
-      error.push(elem.id)
-    }
-  }
-
-  if (error.length == 0 && agree.checked) {
-    subscribeSendActive()
-  } else if (error.length > 0) {
-    subscribeSendDisabled();
-  }
-}
-
 function sendData() {
   let data = new FormData();
 
   if (women.checked) {
-    data.append('group', women.value);
+    data.append('women', women.value);
   }
   if (men.checked) {
-    data.append('group', girls.value);
+    data.append('men', men.value);
   }
   if (girls.checked) {
-    data.append('group', girls.value);
+    data.append('girls', girls.value);
   }
   if (boys.checked) {
-    data.append('group', boys.value);
+    data.append('boys', boys.value);
   }
   if (userEmail.value.length > 0) {
     data.append('user_email', userEmail.value);
-  }
-  if (userEmail2.value.length > 0) {
-    data.append('user_email', userEmail2.value);
-  }
+  }  
   if (agree.checked) {
     data.append('agree', agree.value);
   }
 
-  return data;
-  delete data;
+  return data;  
 }
 
 function sendMail(e) {
