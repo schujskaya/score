@@ -39,21 +39,21 @@ $shadow-large: 0px 60px 80px -20px rgba(30, 33, 44, 0.16), 0px 26px 24px -10px r
   font: {
     size: 46px;
     weight: 900;
-  }  
+  }
   line-height: 130%;
 }
 @mixin title-h2 {
   font: {
     size: 32px;
     weight: 900;
-  }  
+  }
   line-height: 130%;
 }
 @mixin title-h3 {
   font: {
     size: 28px;
     weight: bold;
-  }  
+  }
   line-height: 150%;
 }
 @mixin title-h4 {
@@ -67,14 +67,14 @@ $shadow-large: 0px 60px 80px -20px rgba(30, 33, 44, 0.16), 0px 26px 24px -10px r
   font: {
     size: 20px;
     weight: bold;
-  }  
+  }
   line-height: 130%;
 }
 @mixin title-h6 {
   font: {
     size: 16px;
     weight: bold;
-  }  
+  }
   line-height: 150%;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -83,52 +83,52 @@ $shadow-large: 0px 60px 80px -20px rgba(30, 33, 44, 0.16), 0px 26px 24px -10px r
   font: {
     size: 72px;
     weight: 900;
-  }  
+  }
   line-height: 130%;
   letter-spacing: 1px;
 }
 @mixin lead-regular {
   font: {
-    size: 20px;    
-  }  
+    size: 20px;
+  }
   line-height: 150%;
 }
 @mixin lead-bold {
   font: {
     size: 20px;
     weight: bold;
-  } 
+  }
   line-height: 150%;
 }
 @mixin large-regular {
   font: {
-    size: 20px;    
-  }  
+    size: 20px;
+  }
   line-height: 150%;
 }
 @mixin large-bold {
   font: {
     size: 18px;
     weight: bold;
-  }  
+  }
   line-height: 150%;
 }
 @mixin base-regular {
   font: {
-    size: 16px;    
-  }  
+    size: 16px;
+  }
   line-height: 160%;
 }
 @mixin base-bold {
   font: {
     size: 16px;
     weight: bold;
-  }  
+  }
   line-height: 160%;
 }
 @mixin small-regular {
   font: {
-    size: 14px;    
+    size: 14px;
   }
   line-height: 150%;
 }
@@ -136,20 +136,20 @@ $shadow-large: 0px 60px 80px -20px rgba(30, 33, 44, 0.16), 0px 26px 24px -10px r
   font: {
     size: 14px;
     weight: bold;
-  }  
+  }
   line-height: 150%;
 }
 @mixin extrasmall-regular {
   font: {
-    size: 12px;    
-  }  
+    size: 12px;
+  }
   line-height: 150%;
 }
 @mixin extrasmall-bold {
   font: {
     size: 12px;
     weight: 900;
-  }  
+  }
   line-height: 150%;
 }
 
@@ -252,6 +252,12 @@ body {
   max-width: 1220px;
   margin: 0 auto;
 }
+.no-mobile {
+  display: none;
+  @media only screen and (min-width: 980px) {
+    display: inline-block;
+  }
+}
 
 .topbar {
   font-size: 14px;
@@ -266,20 +272,46 @@ body {
     flex-wrap: wrap;
   }
   &__contacts {
-    & span {
+    &-number {
       font-weight: 600;
     }
   }
   &__nav {
-    display: flex;
+    flex-direction: column;
+    order: 5;
+    width: 100%;
+    @media only screen and (min-width: 980px) {
+    }
+    @media only screen and (min-width: 768px) {
+      flex-direction: row;
+      display: flex;
+      order: 2;
+      width: auto;
+    }
     &-item {
       & + & {
-        margin-left: 32px;
+        @media only screen and (min-width: 768px) {
+          margin-left: 32px;
+        }
+      }
+    }
+    &-toggle {
+      background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1 12C1 11.4477 1.44772 11 2 11H22C22.5523 11 23 11.4477 23 12C23 12.5523 22.5523 13 22 13H2C1.44772 13 1 12.5523 1 12Z' fill='%23FFFFFF'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1 18C1 17.4477 1.44772 17 2 17H22C22.5523 17 23 17.4477 23 18C23 18.5523 22.5523 19 22 19H2C1.44772 19 1 18.5523 1 18Z' fill='%23FFFFFF'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1 6C1 5.44772 1.44772 5 2 5H22C22.5523 5 23 5.44772 23 6C23 6.55228 22.5523 7 22 7H2C1.44772 7 1 6.55228 1 6Z' fill='%23FFFFFF'/%3E%3C/svg%3E");
+      background-position: center;
+      background-repeat: no-repeat;
+      display: block;
+      width: 24px;
+      top: 0;
+      right: 0;
+      order: 4;
+      @media only screen and (min-width: 768px) {
+        display: none;
       }
     }
   }
   &__actions {
     display: flex;
+    order: 3;
   }
   &__language select {
     background-color: $gray-900;
@@ -290,7 +322,10 @@ body {
   }
   &__login {
     display: flex;
-    margin-left: 56px;
+    margin-left: 25px;
+    @media only screen and (min-width: 768px) {
+      margin-left: 56px;
+    }
     & svg {
       margin-right: 9px;
       padding: 2px 0 0;
@@ -310,29 +345,71 @@ body {
   }
   &__left-block {
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: column;
+    position: relative;
+    @media only screen and (min-width: 768px) {
+      flex-direction: row;
+      align-items: center;
+    }
+    @media only screen and (min-width: 980px) {
+      width: auto;
+    }
   }
   &__logo {
     padding-top: 6px;
     margin-right: 59px;
+    margin-bottom: 10px;
+    @media only screen and (min-width: 980px) {
+      margin-bottom: 0;
+    }
   }
   &__menu {
-    display: flex;
     flex-wrap: wrap;
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: 10px;
+    @media only screen and (min-width: 768px) {
+      flex-direction: row;
+      display: flex;
+    }
+    @media only screen and (min-width: 980px) {
+      width: auto;
+      margin-bottom: 0;
+    }
     &-item {
       & + & {
-        margin-left: 40px;
+        @media only screen and (min-width: 768px) {
+          margin-left: 40px;
+        }
       }
       &.sale-item {
         color: $danger;
+      }
+    }
+    &-toggle {
+      background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1 12C1 11.4477 1.44772 11 2 11H22C22.5523 11 23 11.4477 23 12C23 12.5523 22.5523 13 22 13H2C1.44772 13 1 12.5523 1 12Z' fill='%231E212C'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1 18C1 17.4477 1.44772 17 2 17H22C22.5523 17 23 17.4477 23 18C23 18.5523 22.5523 19 22 19H2C1.44772 19 1 18.5523 1 18Z' fill='%231E212C'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1 6C1 5.44772 1.44772 5 2 5H22C22.5523 5 23 5.44772 23 6C23 6.55228 22.5523 7 22 7H2C1.44772 7 1 6.55228 1 6Z' fill='%231E212C'/%3E%3C/svg%3E");
+      background-position: center;
+      background-repeat: no-repeat;
+      display: block;
+      position: absolute;
+      width: 24px;
+      height: 34px;
+      background-color: #fff;
+      top: 0;
+      right: 0;
+      @media only screen and (min-width: 768px) {
+        display: none;
       }
     }
   }
   &__right-block {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
+    width: 100%;
+    @media only screen and (min-width: 980px) {
+      width: auto;
+    }
   }
   & form {
     position: relative;
@@ -346,7 +423,6 @@ body {
     padding: 15px 16px 12px;
   }
   & input {
-    width: 100%;
     padding: 15px 16px 12px;
     max-width: 100%;
     @media only screen and (min-width: 980px) {
@@ -355,8 +431,12 @@ body {
   }
   &__favorites {
     display: flex;
-    padding-right: 20px;
-    margin-left: 48px;
+    padding-right: 15px;
+    margin-left: 15px;
+    @media only screen and (min-width: 768px) {
+      margin-left: 48px;
+      padding-right: 20px;
+    }
     & div {
       font-size: 16px;
       margin-left: 8px;
@@ -364,8 +444,11 @@ body {
   }
   &__shopping-cart {
     display: flex;
-    padding-left: 17px;
+    padding-left: 15px;
     border-left: 1px solid $gray-400;
+    @media only screen and (min-width: 768px) {
+      padding-left: 17px;
+    }
     & div {
       background: #03cea4;
       height: 20px;
@@ -726,11 +809,12 @@ body {
   }
   &__list {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-bottom: 96px;
     flex-wrap: wrap;
     @media only screen and (min-width: 768px) {
       flex-wrap: nowrap;
+      justify-content: space-between;
     }
   }
   &__title {
@@ -761,11 +845,12 @@ body {
   }
   &__list {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 93px;
     @media only screen and (min-width: 768px) {
       flex-wrap: nowrap;
+      justify-content: space-between;
     }
   }
   &__title {
@@ -1020,7 +1105,7 @@ body {
     color: #17696a;
     font-size: 20px;
     position: absolute;
-    bottom: 0;    
+    bottom: 0;
   }
 }
 

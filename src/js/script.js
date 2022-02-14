@@ -50,39 +50,45 @@ function makeTimer() {
 
 /* subscribeForm START */
 
-subscribeSend.addEventListener('click', sendMail);
-subscribeSendGrid.addEventListener('click', sendMail);
+let formSend = document.querySelectorAll('.send');
+for (let elem of formSend) {
+  elem.addEventListener('click', sendMail);
+}
 
-let formInput = subscribeForm.querySelectorAll('input');
-for (let elem of formInput) {
-  elem.oninput = function () {
-    if (validateEmail(subscribeForm) && validateAgree(subscribeForm)) {
-      buttonActive(subscribeSend);
-    } else {
-      buttonDisabled(subscribeSend);
+document.oninput = function (event) {
+  let inputsValid = [];
+  let formEvent = event.target.closest('form');
+  let sendEvent = formEvent.querySelector('.send');
+  let formInput = formEvent.querySelectorAll('input');
+  for (let elem of formInput) {
+    if (elem.type == "email") {
+      SendToggle(validateEmail, inputsValid, sendEvent, formEvent);
+    }
+    if (elem.type == "agree") {
+      SendToggle(validateAgree, inputsValid, sendEvent, formEvent);
     }
   }
 }
 
-let formInputGrid = subscribeFormGrid.querySelectorAll('input');
-for (let elem of formInputGrid) {
-  elem.oninput = function () {
-    if (validateEmail(subscribeFormGrid)) {
-      buttonActive(subscribeSendGrid);
-    } else {
-      buttonDisabled(subscribeSendGrid);
-    }
+function SendToggle(functionName, inputsValid, sendEvent, formEvent) {
+  if (functionName(formEvent) == false) {
+    inputsValid.push(false);
+  }
+  if (inputsValid.every(function (x) { return x == true; })) {
+    buttonActive(sendEvent);
+  } else {
+    buttonDisabled(sendEvent);
   }
 }
 
 let inputEmail = document.querySelectorAll('.email');
-for (let elem of inputEmail) {  
-  elem.onblur = function() {
+for (let elem of inputEmail) {
+  elem.onblur = function () {
     formName = elem.closest('form');
-    if (!validateEmail(formName)) {       
+    if (!validateEmail(formName)) {
       succesDisplay(formName, 'Error e-mail');
     }
-  };
+  }
 }
 
 function validateEmail(e) {
@@ -107,8 +113,8 @@ function buttonActive(e) {
 }
 
 function succesDisplay(e, a) {
-  let formSucces = e.querySelector('.subscribe-form__succes');  
-  formSucces.innerHTML = a;  
+  let formSucces = e.querySelector('.subscribe-form__succes');
+  formSucces.innerHTML = a;
   setTimeout(function () {
     formSucces.innerHTML = '';
   }, 5000);
@@ -162,7 +168,17 @@ function sendMail(e) {
     })
     .catch(() => console.log('Error'));
   formName.reset();
+  buttonDisabled(buttonName);
   succesDisplay(formName, "Form sent successfully!");
 }
 
 /* subscribeForm END */
+
+document.addEventListener('click', function (event) {
+  let id = event.target.dataset.toggleId;
+  if (!id) return;
+  event.target.classList.toggle("hidden");
+
+  let elem = document.getElementById(id);
+  elem.hidden = !elem.hidden;
+});
