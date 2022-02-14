@@ -189,7 +189,7 @@ document.addEventListener('click', function (event) {
 
 /* Header sticky START */
 
-window.addEventListener('uudfjkljmnhhghgkbghkhjkjhjjjjjjkhjhho', function() {
+window.addEventListener('scroll', function() {
   if (window.pageYOffset > 126) {
     header.classList.add("sticky");
   } else if (window.pageYOffset < 126) {
