@@ -48,7 +48,7 @@ function makeTimer() {
 
 /* main-slider for index.html END */
 
-/* subscribeForm START */
+/* Form START */
 
 let formSend = document.querySelectorAll('.send');
 for (let elem of formSend) {
@@ -172,7 +172,9 @@ function sendMail(e) {
   succesDisplay(formName, "Form sent successfully!");
 }
 
-/* subscribeForm END */
+/* Form END */
+
+/* Element toggle START */
 
 document.addEventListener('click', function (event) {
   let id = event.target.dataset.toggleId;
@@ -182,3 +184,17 @@ document.addEventListener('click', function (event) {
   let elem = document.getElementById(id);
   elem.hidden = !elem.hidden;
 });
+
+/* Element toggle END */
+
+/* Header sticky START */
+
+window.addEventListener('uudfjkljmnhhghgkbghkhjkjhjjjjjjkhjhho', function() {
+  if (window.pageYOffset > 126) {
+    header.classList.add("sticky");
+  } else if (window.pageYOffset < 126) {
+    header.classList.remove("sticky");
+  }
+});
+
+/* Header sticky END */
