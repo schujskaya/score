@@ -10,7 +10,7 @@
 </head>
 
 <body>
-	<div class="topbar">
+	<section class="topbar">
 		<div class="container">
 			<div class="topbar__contacts"><span class="no-mobile">Available 24/7 at</span> <span
 					class="topbar__contacts-number">(405) 555-0128</span></div>
@@ -200,7 +200,8 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
+
 	<header class="header" id="header">
 		<div class="container">
 			<div class="header__left-block">
@@ -254,6 +255,7 @@
 			</div>
 		</div>
 	</header>
+
 	<section class="banner-string">
 		<div class="banner-string__prev">
 			<svg width="6" height="11" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -371,6 +373,7 @@
 			</article>
 		</div>
 	</section>
+
 	<section class="carousel">
 		<div class="carousel__title">New arrivals</div>
 		<div class="carousel__subtitle">Check out our latest arrivals for the upcoming season <span
@@ -617,6 +620,7 @@
 			<div class="carousel__nav-item"></div>
 		</div>
 	</section>
+
 	<section class="main-grid">
 		<div class="main-grid__item main-grid__item1 main-grid__item--width-40">
 			<div class="main-grid__subtitle">Summer Collections</div>
@@ -647,16 +651,19 @@
 			<div class="main-grid__title">Get 5% Off & Free Delivery</div>
 			<form class="subscribe-form" id="subscribeFormGrid">
 				<label class="subscribe-form__label" for="email">Email</label>
-				<input class="subscribe-form__input email" id="userEmailGrid" placeholder="Your working email" required
+				<div class="wrapper">
+					<input class="subscribe-form__input email" id="userEmailGrid" placeholder="Your working email" required
 					minlength="6" type="email">
 				<button class="subscribe-form__button send" type="submit" name="send" id="subscribeSendGrid"
 					value="Subscribe" disabled="disabled">Subscribe</button>
+				</div>				
 				<div class="subscribe-form__description">*Sign up to be the first to hear about exclusive deals, special
 					offers and upcoming collections.</div>
 				<div class="subscribe-form__succes"></div>
 			</form>
 		</div>
 	</section>
+
 	<section class="populars">
 		<div class="populars__title">Popular categories</div>
 		<div class="container">
@@ -688,6 +695,7 @@
 			</div>
 		</div>
 	</section>
+
 	<section class="trends">
 		<div class="container">
 			<div class="trends__title">Trending now</div>
@@ -853,6 +861,7 @@
 			<button name="button" class="button button--type-border">Explore top sales</button>
 		</div>
 	</section>
+
 	<section class="sale">
 		<div class="container">
 			<div class="sale__title">Sale up to 70%</div>
@@ -1023,6 +1032,7 @@
 			<button name="button" class="button button--type-border">See all sale products</button>
 		</div>
 	</section>
+
 	<section class="applications">
 		<div class="container">
 			<div class="applications__image"><img src="/src/images/applications.png" alt="image format png" /></div>
@@ -1045,6 +1055,7 @@
 			</div>
 		</div>
 	</section>
+
 	<section class="benefits">
 		<div class="container">
 			<div class="benefits__list">
@@ -1151,6 +1162,7 @@
 			</div>
 		</div>
 	</section>
+
 	<section class="instagram">
 		<div class="container">
 			<div class="instagram__info">
@@ -1165,6 +1177,7 @@
 			</div>
 		</div>
 	</section>
+
 	<section class="blog">
 		<div class="container">
 			<div class="blog__title">Fashion blog</div>
@@ -1195,6 +1208,7 @@
 			<button name="button" class="button button--type-border">View blog</button>
 		</div>
 	</section>
+
 	<section class="brands">
 		<div class="container">
 			<div class="brands__list">
@@ -1231,6 +1245,7 @@
 			</div>
 		</div>
 	</section>
+
 	<section class="subscribe">
 		<div class="container">
 			<div class="subscribe__title">Subscribe for updates</div>
@@ -1259,6 +1274,7 @@
 			</form>
 		</div>
 	</section>
+
 	<footer>
 		<div class="footer-top">
 			<div class="container">
@@ -1333,5 +1349,4 @@
 	</footer>
 </body>
 <script src="/src/js/script.js"></script>
-
 </html>
